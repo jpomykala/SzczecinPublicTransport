@@ -21,10 +21,9 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = MapViewModel(self)
         setupMap()
-        updateView()
-        viewModel.updateVehiclePositions()
+        setupUserTrackingButtonAndScaleView()
+        self.viewModel = MapViewModel(self)
     }
     
     private func setupMap(){
@@ -34,22 +33,14 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
         let cityRegion = MKCoordinateRegion(center: cityCenter, span: coordinateSpan)
         mapView.setRegion(cityRegion, animated: true)
         mapView.mapType = .mutedStandard
-        mapView.delegate = self
         mapView.showsTraffic = true
         mapView.showsUserLocation = true
         mapView.showsCompass = true
         mapView.showsScale = true
-        mapView.register(VehicleMarker.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-        setupUserTrackingButtonAndScaleView()
+        mapView.register(CustomMarkerView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
-    func updateView() {
-        mapView.removeAnnotations(mapView.annotations)
-        mapView.addAnnotations(viewModel.vehicleMarkers)
-//        mapView.addAnnotations(viewModel.vehicleStopMarkers)
-    }
-    
-    func setupUserTrackingButtonAndScaleView() {
+    private func setupUserTrackingButtonAndScaleView() {
         let button = MKUserTrackingButton(mapView: mapView)
         button.layer.backgroundColor = UIColor(white: 1, alpha: 0.8).cgColor
         button.layer.borderColor = UIColor.white.cgColor
@@ -69,6 +60,14 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
                                      scale.centerYAnchor.constraint(equalTo: button.centerYAnchor)])
     }
     
-   
+    func updateView() {
+        DispatchQueue.main.async {
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            self.mapView.addAnnotations(self.viewModel.vehicleMarkers)
+            self.mapView.addAnnotations(self.viewModel.stopMarkers)
+        }
+        
+        
+    }
 }
 

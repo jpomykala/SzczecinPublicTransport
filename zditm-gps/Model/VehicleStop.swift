@@ -9,7 +9,11 @@
 import Foundation
 import MapKit
 
-struct VehicleStop: Decodable {
+struct VehicleStop: Decodable, Equatable {
+    static func ==(lhs: VehicleStop, rhs: VehicleStop) -> Bool {
+        return lhs.id! == rhs.id!
+    }
+    
     
     var id: Int?
     var location: CLLocationCoordinate2D?
@@ -27,6 +31,8 @@ struct VehicleStop: Decodable {
 
 extension VehicleStop {
     init(from decoder: Decoder) throws {
+        
+        do {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
@@ -36,6 +42,9 @@ extension VehicleStop {
         let latitudeDegrees = CLLocationDegrees(latitude)
         let longitudeDegrees = CLLocationDegrees(longitude)
         location = CLLocationCoordinate2D(latitude: latitudeDegrees, longitude: longitudeDegrees)
+        } catch {
+            print("eeerror")
+        }
         
     }
 }

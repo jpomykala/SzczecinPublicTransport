@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import MapKit
 
 class ZditmService  {
 
@@ -36,7 +37,35 @@ class ZditmService  {
             if let data = response.data {
                 do {
                     let stops = try JSONDecoder().decode([VehicleStop].self, from: data)
-                    completition(stops)
+                    let mergedStops = stops
+                        .map({ (stop) -> VehicleStop in
+                            let stopsById = stops.filter({$0.name == stop.name!})
+                            let sumLat = stopsById.reduce(0.0, { (result, stop) -> Double in
+                                return result + Double(stop.location!.latitude)
+                            })
+                            
+                            let sumLon = stopsById.reduce(0.0, { (result, stop) -> Double in
+                                return result + Double(stop.location!.longitude)
+                            })
+                            
+                            let avgLat = sumLat / Double(stopsById.count)
+                            let avgLon = sumLon / Double(stopsById.count)
+                            let avgCoordinates = CLLocationCoordinate2D(
+                                latitude: CLLocationDegrees(avgLat),
+                                longitude: CLLocationDegrees(avgLon))
+
+                            return VehicleStop(id: stop.id, location: avgCoordinates, name: stop.name, groupId: stop.groupId)
+                        })
+                    
+                    var uniqueStops = [VehicleStop]()
+                    for stop in mergedStops{
+                        if uniqueStops.contains(stop){
+                            continue
+                        }
+                        uniqueStops.append(stop)
+                    }
+
+                    completition(uniqueStops)
                 } catch {
                     print("Error during encoding, result: \(response.result)")
                     completition([])

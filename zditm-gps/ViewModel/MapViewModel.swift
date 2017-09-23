@@ -17,48 +17,51 @@ class MapViewModel {
     private var locationManager: CLLocationManager
     private var timer = Timer()
     
-    private var vehiclePositions: [VehiclePostion]
+    private var vehicles: [VehiclePostion]
     private var vehicleStops: [VehicleStop]
     
-    init(_ delegate: MapScreenProtocol){
+    init(_ delegate: MapScreenProtocol) {
         self.delegate = delegate
         self.zditmService = ZditmService()
-        self.vehiclePositions = []
+        self.vehicles = []
         self.vehicleStops = []
         self.locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-//        loadAllVehicleStops()
+        loadAllVehicleStops()
+        updateVehiclePositions()
         scheduledTimerWithTimeInterval()
     }
     
-    var vehicleMarkers: [VehicleAnnotation]{
-        var output = [VehicleAnnotation]()
-        for vehicle in vehiclePositions {
-            let title = "Linia \(vehicle.line ?? "nieznana")"
-            guard let location = vehicle.location else {continue}
-            let annotation = VehicleAnnotation(vehicle)
-            output.append(annotation)
+    var vehicleMarkers: [CustomAnnotation]{
+        return vehicles
+            .filter({ $0.location != nil})
+            .map { (vehicle) -> CustomAnnotation in
+            let text = "Linia \(vehicle.line ?? "nieznana")"
+                return CustomAnnotation(title: "🚍",
+                                        coordinate: vehicle.location!,
+                                        color: UIColor(hexString: "#64B5F6"),
+                                        subtitle: text,
+                                        type: .BUS)
         }
-        return output
     }
     
-    var vehicleStopMarkers: [MKPointAnnotation]{
-        var annotations = [MKPointAnnotation]()
-        for stop in vehicleStops {
-            guard let location = stop.location else { continue }
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = location
-            annotation.title = "Przystanek \(stop.name ?? "nieznany")"
-            annotations.append(annotation)
+    var stopMarkers: [CustomAnnotation]{
+        return vehicleStops
+            .filter({ $0.location != nil})
+            .map { (stop) -> CustomAnnotation in
+                let text = "Przystanek \(stop.name ?? "nieznany")"
+                return CustomAnnotation(title: "P",
+                                        coordinate:stop.location!,
+                                        color: UIColor(hexString: "#FF7043"),
+                                        subtitle: text,
+                                        type: .STOP)
         }
-        return annotations
     }
     
     func loadAllVehicleStops() {
         zditmService.fetchRoute(lineNumber: 0, completition:  { (stops) in
             if stops.isEmpty {
-                print("Vehicle stop array is empty")
                 return
             }
             self.vehicleStops = stops
@@ -72,16 +75,17 @@ class MapViewModel {
     
     @objc func updateCounting(){
         print("updatind vehicle positions")
-        self.updateVehiclePositions()
+        DispatchQueue.main.async {
+            self.updateVehiclePositions()
+        }
     }
     
     func updateVehiclePositions(){
         zditmService.fetchBuses { (vehicles) in
             if vehicles.isEmpty {
-                print("Vehicle array is empty")
                 return
             }
-            self.vehiclePositions = vehicles
+            self.vehicles = vehicles
             self.delegate.updateView()
         }
     }

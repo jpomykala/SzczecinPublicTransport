@@ -14,10 +14,11 @@
 		29694F8A1F75AC1100035D5D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29694F891F75AC1100035D5D /* MapViewModel.swift */; };
 		29A0087B1F7677920056102B /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0087A1F7677920056102B /* VehicleType.swift */; };
 		29A0087D1F76791F0056102B /* VehicleStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0087C1F76791F0056102B /* VehicleStop.swift */; };
-		29A008801F76936D0056102B /* VehicleMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0087F1F76936D0056102B /* VehicleMarker.swift */; };
 		29A008851F76A1BC0056102B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008841F76A1BC0056102B /* Constants.swift */; };
 		29A008881F76A2D50056102B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008871F76A2D50056102B /* UIColor+Extension.swift */; };
-		29A0088A1F76AA240056102B /* VehicleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008891F76AA240056102B /* VehicleAnnotation.swift */; };
+		29A0088A1F76AA240056102B /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008891F76AA240056102B /* CustomAnnotation.swift */; };
+		29A0088E1F76E5C00056102B /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0088D1F76E5C00056102B /* CustomMarkerView.swift */; };
+		29A008901F76F8CE0056102B /* MarkerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0088F1F76F8CE0056102B /* MarkerType.swift */; };
 		29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7006A1F75A1670072D88C /* AppDelegate.swift */; };
 		29B7006D1F75A1670072D88C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7006C1F75A1670072D88C /* ViewController.swift */; };
 		29B700701F75A1670072D88C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B7006E1F75A1670072D88C /* Main.storyboard */; };
@@ -32,10 +33,11 @@
 		29694F891F75AC1100035D5D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		29A0087A1F7677920056102B /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
 		29A0087C1F76791F0056102B /* VehicleStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleStop.swift; sourceTree = "<group>"; };
-		29A0087F1F76936D0056102B /* VehicleMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleMarker.swift; sourceTree = "<group>"; };
 		29A008841F76A1BC0056102B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		29A008871F76A2D50056102B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		29A008891F76AA240056102B /* VehicleAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAnnotation.swift; sourceTree = "<group>"; };
+		29A008891F76AA240056102B /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		29A0088D1F76E5C00056102B /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
+		29A0088F1F76F8CE0056102B /* MarkerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerType.swift; sourceTree = "<group>"; };
 		29B700671F75A1670072D88C /* zditm-gps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zditm-gps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B7006A1F75A1670072D88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29B7006C1F75A1670072D88C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,8 +66,9 @@
 		29A0087E1F7693540056102B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				29A0087F1F76936D0056102B /* VehicleMarker.swift */,
-				29A008891F76AA240056102B /* VehicleAnnotation.swift */,
+				29A008891F76AA240056102B /* CustomAnnotation.swift */,
+				29A0088D1F76E5C00056102B /* CustomMarkerView.swift */,
+				29A0088F1F76F8CE0056102B /* MarkerType.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -301,17 +304,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29A0088A1F76AA240056102B /* VehicleAnnotation.swift in Sources */,
+				29A0088A1F76AA240056102B /* CustomAnnotation.swift in Sources */,
 				29A0087D1F76791F0056102B /* VehicleStop.swift in Sources */,
 				29B7006D1F75A1670072D88C /* ViewController.swift in Sources */,
 				29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */,
+				29A0088E1F76E5C00056102B /* CustomMarkerView.swift in Sources */,
 				29A008881F76A2D50056102B /* UIColor+Extension.swift in Sources */,
 				2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */,
 				29A0087B1F7677920056102B /* VehicleType.swift in Sources */,
 				29A008851F76A1BC0056102B /* Constants.swift in Sources */,
 				2900FEE91F75BD3F002C1186 /* ZditmService.swift in Sources */,
 				29694F8A1F75AC1100035D5D /* MapViewModel.swift in Sources */,
-				29A008801F76936D0056102B /* VehicleMarker.swift in Sources */,
+				29A008901F76F8CE0056102B /* MarkerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
