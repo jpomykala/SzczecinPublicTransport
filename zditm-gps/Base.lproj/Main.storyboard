@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-5w-AIu">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-5w-AIu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                         </subviews>
@@ -31,7 +31,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="xcm-bl-fG9">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="5xq-gQ-nUg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="5xq-gQ-nUg"/>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="FYW-5w-AIu" id="trS-Ct-fBz"/>

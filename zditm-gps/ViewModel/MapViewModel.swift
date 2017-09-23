@@ -18,17 +18,17 @@ class MapViewModel {
     private var timer = Timer()
     
     private var vehicles: [VehiclePostion]
-    private var vehicleStops: [VehicleStop]
+    private var stops: [VehicleStop]
     
     init(_ delegate: MapScreenProtocol) {
         self.delegate = delegate
         self.zditmService = ZditmService()
         self.vehicles = []
-        self.vehicleStops = []
+        self.stops = []
         self.locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        loadAllVehicleStops()
+//        loadStops(line: 53)
         updateVehiclePositions()
         scheduledTimerWithTimeInterval()
     }
@@ -37,34 +37,32 @@ class MapViewModel {
         return vehicles
             .filter({ $0.location != nil})
             .map { (vehicle) -> CustomAnnotation in
-            let text = "Linia \(vehicle.line ?? "nieznana")"
-                return CustomAnnotation(title: "🚍",
+            let text = "🚍 Linia \(vehicle.line ?? "nieznana")"
+                return CustomAnnotation(title: text,
                                         coordinate: vehicle.location!,
-                                        color: UIColor(hexString: "#64B5F6"),
-                                        subtitle: text,
-                                        type: .BUS)
+                                        type: .BUS,
+                                        delay: vehicle.delay ?? 0)
         }
     }
     
     var stopMarkers: [CustomAnnotation]{
-        return vehicleStops
+        return stops
             .filter({ $0.location != nil})
             .map { (stop) -> CustomAnnotation in
                 let text = "Przystanek \(stop.name ?? "nieznany")"
-                return CustomAnnotation(title: "P",
+                return CustomAnnotation(title: text,
                                         coordinate:stop.location!,
-                                        color: UIColor(hexString: "#FF7043"),
-                                        subtitle: text,
-                                        type: .STOP)
+                                        type: .STOP,
+                                        delay: 0)
         }
     }
     
-    func loadAllVehicleStops() {
-        zditmService.fetchRoute(lineNumber: 0, completition:  { (stops) in
+    func loadStops(line: Int) {
+        zditmService.fetchRoute(lineNumber: line, completition:  { (stops) in
             if stops.isEmpty {
                 return
             }
-            self.vehicleStops = stops
+            self.stops = stops
             self.delegate.updateView()
         })
     }
@@ -74,13 +72,13 @@ class MapViewModel {
     }
     
     @objc func updateCounting(){
-        print("updatind vehicle positions")
         DispatchQueue.main.async {
             self.updateVehiclePositions()
         }
     }
     
     func updateVehiclePositions(){
+        print("Refreshing vehicles")
         zditmService.fetchBuses { (vehicles) in
             if vehicles.isEmpty {
                 return

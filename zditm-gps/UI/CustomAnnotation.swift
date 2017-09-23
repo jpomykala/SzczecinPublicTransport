@@ -12,19 +12,18 @@ final class CustomAnnotation: NSObject, MKAnnotation {
     
     let title: String?
     let coordinate: CLLocationCoordinate2D
-    let color: UIColor
     let subtitle: String?
     let type: MarkerType
+    let delay: Int
     
     init(title: String,
          coordinate: CLLocationCoordinate2D,
-         color: UIColor,
-         subtitle: String,
-         type: MarkerType) {
+         type: MarkerType,
+         delay: Int) {
         self.title = title
         self.coordinate = coordinate
-        self.color = color
-        self.subtitle = subtitle
+        self.subtitle = "Opóźnienie \(delay)"
         self.type = type
+        self.delay = delay
     }
 }

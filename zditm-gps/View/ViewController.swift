@@ -33,10 +33,12 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
         let cityRegion = MKCoordinateRegion(center: cityCenter, span: coordinateSpan)
         mapView.setRegion(cityRegion, animated: true)
         mapView.mapType = .mutedStandard
+        mapView.delegate = self
         mapView.showsTraffic = true
         mapView.showsUserLocation = true
         mapView.showsCompass = true
         mapView.showsScale = true
+        
         mapView.register(CustomMarkerView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
