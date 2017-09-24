@@ -15,15 +15,33 @@ protocol MapScreenProtocol {
 
 class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
     
+    @IBOutlet var searchVar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
+    var resultSearchController: UISearchController?
     
     var viewModel: MapViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMap()
+        setupSearchBar()
         setupUserTrackingButtonAndScaleView()
         self.viewModel = MapViewModel(self)
+    }
+    
+    private func setupSearchBar(){
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "ResultSearchController") as! ResultSearchController
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Szukaj linii"
+        searchBar.searchBarStyle = .minimal
+        searchBar.isTranslucent = true
+        navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
     }
     
     private func setupMap(){

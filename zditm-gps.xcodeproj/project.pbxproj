@@ -10,6 +10,7 @@
 		0C8D693B6F7CAFDD0B4AA3CF /* Pods_zditm_gps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92BE20758D96EA57A9852C1 /* Pods_zditm_gps.framework */; };
 		2900FEE91F75BD3F002C1186 /* ZditmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEE81F75BD3F002C1186 /* ZditmService.swift */; };
 		2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */; };
+		293225081F7734530040C747 /* ResultSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293225071F7734530040C747 /* ResultSearchController.swift */; };
 		29694F881F75A63300035D5D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29694F871F75A63300035D5D /* MapKit.framework */; };
 		29694F8A1F75AC1100035D5D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29694F891F75AC1100035D5D /* MapViewModel.swift */; };
 		298122A31F770A2200B942F7 /* VehicleCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298122A21F770A2200B942F7 /* VehicleCallout.xib */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		2900FEE81F75BD3F002C1186 /* ZditmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZditmService.swift; sourceTree = "<group>"; };
 		2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePosition.swift; sourceTree = "<group>"; };
+		293225071F7734530040C747 /* ResultSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchController.swift; sourceTree = "<group>"; };
 		29694F871F75A63300035D5D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		29694F891F75AC1100035D5D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		298122A21F770A2200B942F7 /* VehicleCallout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleCallout.xib; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				29B7006C1F75A1670072D88C /* ViewController.swift */,
+				293225071F7734530040C747 /* ResultSearchController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				29A0088A1F76AA240056102B /* CustomAnnotation.swift in Sources */,
 				29A0087D1F76791F0056102B /* VehicleStop.swift in Sources */,
 				29B7006D1F75A1670072D88C /* ViewController.swift in Sources */,
+				293225081F7734530040C747 /* ResultSearchController.swift in Sources */,
 				29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */,
 				29A0088E1F76E5C00056102B /* CustomMarkerView.swift in Sources */,
 				29A008881F76A2D50056102B /* UIColor+Extension.swift in Sources */,
