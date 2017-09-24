@@ -53,8 +53,8 @@ extension VehiclePostion {
 //        let speedString = try container.decode(String.self, forKey: .speed)
         speed = 0
         
-        
-        let delayString = try container.decode(String.self, forKey: .delay)
+        var delayString = try container.decode(String.self, forKey: .delay)
+        delayString = delayString.replacingOccurrences(of: "&minus;", with: "-")
         if let delayInt = Int(delayString) {
             delay = delayInt
         }

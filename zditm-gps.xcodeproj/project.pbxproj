@@ -27,6 +27,8 @@
 		29B700701F75A1670072D88C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B7006E1F75A1670072D88C /* Main.storyboard */; };
 		29B700721F75A1670072D88C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29B700711F75A1670072D88C /* Assets.xcassets */; };
 		29B700751F75A1670072D88C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B700731F75A1670072D88C /* LaunchScreen.storyboard */; };
+		29F9C0E41F77E377008D6CB2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F9C0E31F77E377008D6CB2 /* SearchViewModel.swift */; };
+		29F9C0E81F77EADF008D6CB2 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F9C0E71F77EADF008D6CB2 /* ResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		29B700711F75A1670072D88C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29B700741F75A1670072D88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29B700761F75A1670072D88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29F9C0E31F77E377008D6CB2 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		29F9C0E71F77EADF008D6CB2 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		D92BE20758D96EA57A9852C1 /* Pods_zditm_gps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zditm_gps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E029B96207561DB7EAF3E37D /* Pods-zditm-gps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zditm-gps.release.xcconfig"; path = "Pods/Target Support Files/Pods-zditm-gps/Pods-zditm-gps.release.xcconfig"; sourceTree = "<group>"; };
 		F659FF643130B32027B9A4F1 /* Pods-zditm-gps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zditm-gps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zditm-gps/Pods-zditm-gps.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				29694F891F75AC1100035D5D /* MapViewModel.swift */,
+				29F9C0E31F77E377008D6CB2 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				29B7006C1F75A1670072D88C /* ViewController.swift */,
 				293225071F7734530040C747 /* ResultSearchController.swift */,
+				29F9C0E71F77EADF008D6CB2 /* ResultTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +326,8 @@
 				29B7006D1F75A1670072D88C /* ViewController.swift in Sources */,
 				293225081F7734530040C747 /* ResultSearchController.swift in Sources */,
 				29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */,
+				29F9C0E81F77EADF008D6CB2 /* ResultTableViewCell.swift in Sources */,
+				29F9C0E41F77E377008D6CB2 /* SearchViewModel.swift in Sources */,
 				29A0088E1F76E5C00056102B /* CustomMarkerView.swift in Sources */,
 				29A008881F76A2D50056102B /* UIColor+Extension.swift in Sources */,
 				2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */,

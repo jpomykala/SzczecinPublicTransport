@@ -35,9 +35,8 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
         resultSearchController?.searchResultsUpdater = locationSearchTable
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Szukaj linii"
-        searchBar.searchBarStyle = .minimal
-        searchBar.isTranslucent = true
+        searchBar.placeholder = "Szukaj linii lub przystanku"
+//        searchBar.keyboardType = .asciiCapableNumberPad
         navigationItem.titleView = resultSearchController?.searchBar
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.dimsBackgroundDuringPresentation = true
@@ -74,7 +73,7 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
         scale.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scale)
         
-        NSLayoutConstraint.activate([button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
+        NSLayoutConstraint.activate([button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
                                      button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
                                      scale.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -10),
                                      scale.centerYAnchor.constraint(equalTo: button.centerYAnchor)])

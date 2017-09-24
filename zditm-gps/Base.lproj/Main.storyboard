@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,18 +62,60 @@
         <scene sceneID="4tV-vj-Cxw">
             <objects>
                 <tableViewController storyboardIdentifier="ResultSearchController" id="ZAF-7f-W0M" customClass="ResultSearchController" customModule="zditm_gps" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ECb-Gc-IHE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ECb-Gc-IHE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6Rh-NY-fAR">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" rowHeight="60" id="6Rh-NY-fAR" customClass="ResultTableViewCell" customModule="zditm_gps" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Rh-NY-fAR" id="Xgb-Ll-VmK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🚍 Linia 53" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBf-CN-pRh">
+                                            <rect key="frame" x="8" y="8" width="92" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="opóźnienie 2 minuty" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDm-nE-Skq">
+                                            <rect key="frame" x="229" y="9.5" width="138" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kołątaja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2U-Cj-1AP">
+                                            <rect key="frame" x="8" y="30.5" width="60.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Słowackiego" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bw-yn-GiC">
+                                            <rect key="frame" x="271" y="30.5" width="96" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jDm-nE-Skq" firstAttribute="centerY" secondItem="oBf-CN-pRh" secondAttribute="centerY" id="3u9-Bn-f1I"/>
+                                        <constraint firstItem="jDm-nE-Skq" firstAttribute="trailing" secondItem="Xgb-Ll-VmK" secondAttribute="trailingMargin" id="5A1-cK-QaC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="A2U-Cj-1AP" secondAttribute="bottom" id="7FZ-FS-F6T"/>
+                                        <constraint firstItem="2bw-yn-GiC" firstAttribute="centerY" secondItem="A2U-Cj-1AP" secondAttribute="centerY" id="PeP-pt-hIc"/>
+                                        <constraint firstItem="oBf-CN-pRh" firstAttribute="top" secondItem="Xgb-Ll-VmK" secondAttribute="topMargin" id="gkg-y9-NTh"/>
+                                        <constraint firstItem="2bw-yn-GiC" firstAttribute="trailing" secondItem="Xgb-Ll-VmK" secondAttribute="trailingMargin" id="lde-DO-T4M"/>
+                                        <constraint firstItem="oBf-CN-pRh" firstAttribute="leading" secondItem="Xgb-Ll-VmK" secondAttribute="leadingMargin" id="mNO-gv-W64"/>
+                                        <constraint firstItem="A2U-Cj-1AP" firstAttribute="leading" secondItem="Xgb-Ll-VmK" secondAttribute="leadingMargin" id="pVw-Hb-0WZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="delayLabel" destination="jDm-nE-Skq" id="zTK-TK-mtN"/>
+                                    <outlet property="fromLabel" destination="A2U-Cj-1AP" id="kD8-EZ-mJm"/>
+                                    <outlet property="titleLabel" destination="oBf-CN-pRh" id="Jdc-4P-JdL"/>
+                                    <outlet property="toLabel" destination="2bw-yn-GiC" id="WnD-oc-vJ2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -83,12 +126,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3m8-Vu-h50" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2436" y="-399.85007496251876"/>
+            <point key="canvasLocation" x="2436" y="-392"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Xtt-xs-Wip">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xmv-69-rOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LtM-eR-vB8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q3R-bT-0sY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -102,6 +144,7 @@
                         <outlet property="searchDisplayController" destination="6hO-aj-QYd" id="Qoc-tk-7Xw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xmv-69-rOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="6hO-aj-QYd">
                     <connections>
                         <outlet property="delegate" destination="LtM-eR-vB8" id="a5R-Tg-G2L"/>
@@ -116,7 +159,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="6yw-qZ-lJd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="naa-NH-AwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="PR9-8x-3co" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="rDr-8S-fAT"/>
@@ -130,13 +172,13 @@
                         <segue destination="LtM-eR-vB8" kind="relationship" relationship="viewControllers" id="uop-AQ-HPo"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="naa-NH-AwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="-39"/>
+            <point key="canvasLocation" x="-159" y="-18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BOp-Rq-ibv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W31-ID-5OI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="riR-j0-CAH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="recents" id="uPc-uV-qZt"/>
                     <toolbarItems/>
@@ -149,6 +191,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2ZK-um-hde"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W31-ID-5OI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940" y="-391"/>
         </scene>
