@@ -42,11 +42,11 @@ class ResultSearchController: UITableViewController, UISearchResultsUpdating, Re
             fatalError("The dequeued cell is not an instance of ResultTableViewCell.")
         }
         
-        cell.titleLabel.text = viewModel.getTitle(indexPath: indexPath)
-        cell.delayLabel.text = viewModel.getDelay(indexPath: indexPath)
-        cell.fromLabel.text = viewModel.getFrom(indexPath: indexPath)
-        cell.toLabel.text = viewModel.getTo(indexPath: indexPath)
-        
+        let cellViewModel = viewModel.getCellViewModel(indexPath)
+        cell.titleLabel.text = cellViewModel.title
+        cell.delayLabel.text = cellViewModel.delay
+        cell.fromLabel.text = cellViewModel.from
+        cell.toLabel.text = cellViewModel.to
         return cell
     }
     

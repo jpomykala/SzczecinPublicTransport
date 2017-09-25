@@ -28,32 +28,15 @@ class MapViewModel {
         self.locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-//        loadStops(line: 53)
         updateVehiclePositions()
         scheduledTimerWithTimeInterval()
     }
     
-    var vehicleMarkers: [CustomAnnotation]{
+    var vehicleMarkers: [MarkerViewModel]{
         return vehicles
             .filter({ $0.location != nil})
-            .map { (vehicle) -> CustomAnnotation in
-            let text = "🚍 Linia \(vehicle.line ?? "nieznana")"
-                return CustomAnnotation(title: text,
-                                        coordinate: vehicle.location!,
-                                        type: .BUS,
-                                        delay: vehicle.delay ?? 0)
-        }
-    }
-    
-    var stopMarkers: [CustomAnnotation]{
-        return stops
-            .filter({ $0.location != nil})
-            .map { (stop) -> CustomAnnotation in
-                let text = "Przystanek \(stop.name ?? "nieznany")"
-                return CustomAnnotation(title: text,
-                                        coordinate:stop.location!,
-                                        type: .STOP,
-                                        delay: 0)
+            .map { (vehicle) -> MarkerViewModel in
+                return MarkerViewModel(vehicle)
         }
     }
     

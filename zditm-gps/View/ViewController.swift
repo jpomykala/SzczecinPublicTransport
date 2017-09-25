@@ -36,7 +36,6 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Szukaj linii lub przystanku"
-//        searchBar.keyboardType = .asciiCapableNumberPad
         navigationItem.titleView = resultSearchController?.searchBar
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.dimsBackgroundDuringPresentation = true
@@ -83,7 +82,6 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
         DispatchQueue.main.async {
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.mapView.addAnnotations(self.viewModel.vehicleMarkers)
-            self.mapView.addAnnotations(self.viewModel.stopMarkers)
         }
         
         

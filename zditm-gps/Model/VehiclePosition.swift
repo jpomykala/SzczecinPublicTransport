@@ -12,10 +12,9 @@ import MapKit
 struct VehiclePostion: Decodable {
     var id: Int?
     var line: String?
-    var type: VehicleType?
+    var icon: String?
     var from: String?
     var to: String?
-    var speed: Int?
     var delay: Int?
     var location: CLLocationCoordinate2D?
     
@@ -39,19 +38,18 @@ extension VehiclePostion {
         id = Int(idString)
         line = try container.decode(String.self, forKey: .line)
         let typeString = try container.decode(String.self, forKey: .type)
-        type = .OTHER
+        
+        icon = ""
         if typeString.contains("a") {
-            type = .BUS
+            icon = "🚍"
         }
         
         if typeString.contains("t"){
-            type = .TRAM
+            icon = "🚊"
         }
+        
         from = try container.decode(String.self, forKey: .from)
         to = try container.decode(String.self, forKey: .to)
-        
-//        let speedString = try container.decode(String.self, forKey: .speed)
-        speed = 0
         
         var delayString = try container.decode(String.self, forKey: .delay)
         delayString = delayString.replacingOccurrences(of: "&minus;", with: "-")

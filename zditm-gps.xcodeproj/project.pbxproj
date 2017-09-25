@@ -11,6 +11,7 @@
 		2900FEE91F75BD3F002C1186 /* ZditmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEE81F75BD3F002C1186 /* ZditmService.swift */; };
 		2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */; };
 		293225081F7734530040C747 /* ResultSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293225071F7734530040C747 /* ResultSearchController.swift */; };
+		2968B4C31F79A06D00C8B2CF /* ResultRowModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */; };
 		29694F881F75A63300035D5D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29694F871F75A63300035D5D /* MapKit.framework */; };
 		29694F8A1F75AC1100035D5D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29694F891F75AC1100035D5D /* MapViewModel.swift */; };
 		298122A31F770A2200B942F7 /* VehicleCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298122A21F770A2200B942F7 /* VehicleCallout.xib */; };
@@ -19,7 +20,7 @@
 		29A0087D1F76791F0056102B /* VehicleStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0087C1F76791F0056102B /* VehicleStop.swift */; };
 		29A008851F76A1BC0056102B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008841F76A1BC0056102B /* Constants.swift */; };
 		29A008881F76A2D50056102B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008871F76A2D50056102B /* UIColor+Extension.swift */; };
-		29A0088A1F76AA240056102B /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008891F76AA240056102B /* CustomAnnotation.swift */; };
+		29A0088A1F76AA240056102B /* MarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008891F76AA240056102B /* MarkerViewModel.swift */; };
 		29A0088E1F76E5C00056102B /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0088D1F76E5C00056102B /* CustomMarkerView.swift */; };
 		29A008901F76F8CE0056102B /* MarkerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0088F1F76F8CE0056102B /* MarkerType.swift */; };
 		29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7006A1F75A1670072D88C /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		2900FEE81F75BD3F002C1186 /* ZditmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZditmService.swift; sourceTree = "<group>"; };
 		2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePosition.swift; sourceTree = "<group>"; };
 		293225071F7734530040C747 /* ResultSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchController.swift; sourceTree = "<group>"; };
+		2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRowModelView.swift; sourceTree = "<group>"; };
 		29694F871F75A63300035D5D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		29694F891F75AC1100035D5D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		298122A21F770A2200B942F7 /* VehicleCallout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleCallout.xib; sourceTree = "<group>"; };
@@ -43,7 +45,7 @@
 		29A0087C1F76791F0056102B /* VehicleStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleStop.swift; sourceTree = "<group>"; };
 		29A008841F76A1BC0056102B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		29A008871F76A2D50056102B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		29A008891F76AA240056102B /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		29A008891F76AA240056102B /* MarkerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewModel.swift; sourceTree = "<group>"; };
 		29A0088D1F76E5C00056102B /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
 		29A0088F1F76F8CE0056102B /* MarkerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerType.swift; sourceTree = "<group>"; };
 		29B700671F75A1670072D88C /* zditm-gps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zditm-gps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,10 +75,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2968B4BF1F7995D200C8B2CF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				29B7006E1F75A1670072D88C /* Main.storyboard */,
+				29B700731F75A1670072D88C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		29A0087E1F7693540056102B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				29A008891F76AA240056102B /* CustomAnnotation.swift */,
 				29A0088D1F76E5C00056102B /* CustomMarkerView.swift */,
 				29A0088F1F76F8CE0056102B /* MarkerType.swift */,
 				298122A21F770A2200B942F7 /* VehicleCallout.xib */,
@@ -121,10 +131,9 @@
 				29B7007E1F75A25D0072D88C /* Model */,
 				29B7007C1F75A2540072D88C /* ViewModel */,
 				29B7007D1F75A2590072D88C /* View */,
+				2968B4BF1F7995D200C8B2CF /* Storyboard */,
 				29B7006A1F75A1670072D88C /* AppDelegate.swift */,
-				29B7006E1F75A1670072D88C /* Main.storyboard */,
 				29B700711F75A1670072D88C /* Assets.xcassets */,
-				29B700731F75A1670072D88C /* LaunchScreen.storyboard */,
 				29B700761F75A1670072D88C /* Info.plist */,
 			);
 			path = "zditm-gps";
@@ -133,8 +142,10 @@
 		29B7007C1F75A2540072D88C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				29A008891F76AA240056102B /* MarkerViewModel.swift */,
 				29694F891F75AC1100035D5D /* MapViewModel.swift */,
 				29F9C0E31F77E377008D6CB2 /* SearchViewModel.swift */,
+				2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -321,11 +332,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				298122A51F770A4100B942F7 /* VehicleCallout.swift in Sources */,
-				29A0088A1F76AA240056102B /* CustomAnnotation.swift in Sources */,
+				29A0088A1F76AA240056102B /* MarkerViewModel.swift in Sources */,
 				29A0087D1F76791F0056102B /* VehicleStop.swift in Sources */,
 				29B7006D1F75A1670072D88C /* ViewController.swift in Sources */,
 				293225081F7734530040C747 /* ResultSearchController.swift in Sources */,
 				29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */,
+				2968B4C31F79A06D00C8B2CF /* ResultRowModelView.swift in Sources */,
 				29F9C0E81F77EADF008D6CB2 /* ResultTableViewCell.swift in Sources */,
 				29F9C0E41F77E377008D6CB2 /* SearchViewModel.swift in Sources */,
 				29A0088E1F76E5C00056102B /* CustomMarkerView.swift in Sources */,
