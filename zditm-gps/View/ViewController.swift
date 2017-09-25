@@ -87,6 +87,7 @@ class ViewController: UIViewController, MapScreenProtocol, HandleLineSelectedDel
         DispatchQueue.main.async {
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.mapView.addAnnotations(self.viewModel.vehicleMarkers)
+            self.mapView.showAnnotations(self.viewModel.vehicleMarkers, animated: true)
         }
     }
     

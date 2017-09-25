@@ -25,8 +25,6 @@ class CustomMarkerView: MKMarkerAnnotationView {
             label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
             label.text = annotation.subtitle ?? ""
             detailCalloutAccessoryView = label
-            rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            
         }
     }
 }
