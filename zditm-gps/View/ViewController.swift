@@ -13,12 +13,16 @@ protocol MapScreenProtocol {
     func updateView()
 }
 
-class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
-    
+protocol HandleLineSelectedDelegate {
+    func highlightLine(line: String)
+}
+
+class ViewController: UIViewController, MapScreenProtocol, HandleLineSelectedDelegate, MKMapViewDelegate {
+
     @IBOutlet var searchVar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
-    var resultSearchController: UISearchController?
-    
+    var resultSearchController: UISearchController? = nil
+    var searchBar: UISearchBar? = nil
     var viewModel: MapViewModel!
     
     override func viewDidLoad() {
@@ -33,9 +37,10 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "ResultSearchController") as! ResultSearchController
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
-        let searchBar = resultSearchController!.searchBar
-        searchBar.sizeToFit()
-        searchBar.placeholder = "Szukaj linii lub przystanku"
+        locationSearchTable.delegate = self
+        searchBar = resultSearchController!.searchBar
+        searchBar!.sizeToFit()
+        searchBar!.placeholder = "Szukaj linii lub przystanku"
         navigationItem.titleView = resultSearchController?.searchBar
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.dimsBackgroundDuringPresentation = true
@@ -83,8 +88,11 @@ class ViewController: UIViewController, MapScreenProtocol, MKMapViewDelegate {
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.mapView.addAnnotations(self.viewModel.vehicleMarkers)
         }
-        
-        
+    }
+    
+    func highlightLine(line: String) {
+        viewModel.highlightLine(line: line)
+        searchBar?.text = line
     }
 }
 

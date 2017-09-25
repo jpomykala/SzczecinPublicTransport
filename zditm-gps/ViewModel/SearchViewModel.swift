@@ -20,7 +20,7 @@ class SearchViewModel {
     init(_ delegate: ResultSearchDelegate) {
         self.delegate = delegate
         self.zditmService = ZditmService()
-
+        
         
         self.locationManager = CLLocationManager()
         self.vehicles = []
@@ -39,10 +39,14 @@ class SearchViewModel {
     }
     
     func updateQuery(_ query: String) {
-        self.filteredVehicles = vehicles
-            .filter({$0.line != nil})
-            .filter { (vehicle) -> Bool in
-                return vehicle.line!.contains(query)
+        if query.isEmpty {
+            self.filteredVehicles = self.vehicles
+        } else {
+            self.filteredVehicles = vehicles
+                .filter({$0.line != nil})
+                .filter { (vehicle) -> Bool in
+                    return vehicle.line!.contains(query)
+            }
         }
         self.delegate.updateView()
     }

@@ -20,6 +20,10 @@ class ResultRowModelView {
        return vehicle.icon ?? ""
     }
     
+    var line: String {
+        return vehicle.line ?? ""
+    }
+    
     var title: String {
         return "\(vehicle.icon ?? "") Linia \(vehicle.line ?? "nieznana linia")"
     }

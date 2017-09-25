@@ -17,7 +17,7 @@ protocol ResultSearchDelegate {
 class ResultSearchController: UITableViewController, UISearchResultsUpdating, ResultSearchDelegate {
  
     var viewModel: SearchViewModel!
-    var mapView: MKMapView? = nil
+    var delegate: HandleLineSelectedDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,8 @@ class ResultSearchController: UITableViewController, UISearchResultsUpdating, Re
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let searchBarText = searchController.searchBar.text else { return }
-        viewModel.updateQuery(searchBarText)
+        let line = searchController.searchBar.text ?? ""
+        viewModel.updateQuery(line)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,6 +35,13 @@ class ResultSearchController: UITableViewController, UISearchResultsUpdating, Re
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfSections
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellViewModel = viewModel.getCellViewModel(indexPath)
+        viewModel.updateQuery(cellViewModel.line)
+        delegate?.highlightLine(line: cellViewModel.line)
+        dismiss(animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

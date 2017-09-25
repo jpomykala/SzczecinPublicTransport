@@ -26,7 +26,7 @@ class ZditmService  {
         }
     }
     
-    func fetchRoute(lineNumber: Int, completition: @escaping (_ result: [VehicleStop]) -> Void){
+    func fetchStops(lineNumber: Int, completition: @escaping (_ result: [VehicleStop]) -> Void){
         let url = baseUrl + "json/slupki.inc.php?linia=\(lineNumber)"
         Alamofire.request(url).responseJSON { response in
             guard let data = response.data, let stops = try? JSONDecoder().decode([VehicleStop].self, from: data) else {
@@ -36,6 +36,18 @@ class ZditmService  {
             }
             completition(stops)
         }
+    }
+    
+    func fetchRoute(lineNumber: Int, completition: @escaping (_ result: [VehicleStop]) -> Void){
+        let url = baseUrl + "json/pojazdy.inc.php?gmvid=\(lineNumber)"
+//        Alamofire.request(url).responseJSON { response in
+//            guard let data = response.data, let stops = try? JSONDecoder().decode([].self, from: data) else {
+//                print("Error during Stops decoding!")
+//                completition([])
+//                return
+//            }
+//            completition(stops)
+//        }
     }
     
 }

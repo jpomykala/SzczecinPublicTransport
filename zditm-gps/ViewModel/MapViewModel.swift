@@ -16,15 +16,14 @@ class MapViewModel {
     private var zditmService: ZditmService
     private var locationManager: CLLocationManager
     private var timer = Timer()
+    private var highlightedLine = ""
     
     private var vehicles: [VehiclePostion]
-    private var stops: [VehicleStop]
     
     init(_ delegate: MapScreenProtocol) {
         self.delegate = delegate
         self.zditmService = ZditmService()
         self.vehicles = []
-        self.stops = []
         self.locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
@@ -40,16 +39,6 @@ class MapViewModel {
         }
     }
     
-    func loadStops(line: Int) {
-        zditmService.fetchRoute(lineNumber: line, completition:  { (stops) in
-            if stops.isEmpty {
-                return
-            }
-            self.stops = stops
-            self.delegate.updateView()
-        })
-    }
-    
     func scheduledTimerWithTimeInterval(){
         timer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
     }
@@ -62,12 +51,23 @@ class MapViewModel {
     
     func updateVehiclePositions(){
         print("Refreshing vehicles")
+        
         zditmService.fetchBuses { (vehicles) in
             if vehicles.isEmpty {
                 return
             }
-            self.vehicles = vehicles
+            
+            if self.highlightedLine.isEmpty {
+                self.vehicles = vehicles
+            } else{
+                self.vehicles = vehicles.filter({$0.line == self.highlightedLine})
+            }
             self.delegate.updateView()
         }
+    }
+    
+    func highlightLine(line: String) {
+        self.highlightedLine = line
+        updateVehiclePositions()
     }
 }
