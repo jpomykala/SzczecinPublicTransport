@@ -9,11 +9,7 @@
 import Foundation
 import MapKit
 
-struct VehicleStop: Decodable, Equatable {
-    static func ==(lhs: VehicleStop, rhs: VehicleStop) -> Bool {
-        return lhs.id! == rhs.id!
-    }
-    
+struct VehicleStop: Decodable {
     
     var id: Int?
     var location: CLLocationCoordinate2D?

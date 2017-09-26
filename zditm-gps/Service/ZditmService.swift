@@ -38,16 +38,31 @@ class ZditmService  {
         }
     }
     
-    func fetchRoute(lineNumber: Int, completition: @escaping (_ result: [VehicleStop]) -> Void){
-        let url = baseUrl + "json/pojazdy.inc.php?gmvid=\(lineNumber)"
-//        Alamofire.request(url).responseJSON { response in
-//            guard let data = response.data, let stops = try? JSONDecoder().decode([].self, from: data) else {
-//                print("Error during Stops decoding!")
-//                completition([])
-//                return
-//            }
-//            completition(stops)
-//        }
+    func fetchRoute(gmvid: Int, completition: @escaping (_ result: [CLLocationCoordinate2D]) -> Void){
+        let url = baseUrl + "json/trasy.inc.php?gmvid=\(gmvid)"
+        
+        Alamofire.request(url).responseJSON{ response in
+            guard let data = response.data, let geojson = try? JSONDecoder().decode(RouteGeoJson.self, from: data) else {
+                print("Error during Stops decoding!")
+                completition([])
+                return
+            }
+            
+            var routePoints = [CLLocationCoordinate2D]()
+            geojson.features
+                .map({$0.geometry})
+                .map({$0.coordinates})
+                .forEach({ (coordinateArray) in
+                    for coord in coordinateArray {
+                        let lat = CLLocationDegrees(coord[1])
+                        let lng = CLLocationDegrees(coord[0])
+                        routePoints.append(CLLocationCoordinate2D(latitude: lat, longitude: lng))
+                    }
+                })
+            completition(routePoints)
+          
+        }
+        
     }
-    
+
 }

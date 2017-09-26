@@ -10,21 +10,18 @@
 		0C8D693B6F7CAFDD0B4AA3CF /* Pods_zditm_gps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92BE20758D96EA57A9852C1 /* Pods_zditm_gps.framework */; };
 		2900FEE91F75BD3F002C1186 /* ZditmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEE81F75BD3F002C1186 /* ZditmService.swift */; };
 		2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */; };
+		2925E51E1F7AFE0D009BFD9C /* RouteGeoJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2925E51D1F7AFE0D009BFD9C /* RouteGeoJson.swift */; };
 		293225081F7734530040C747 /* ResultSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293225071F7734530040C747 /* ResultSearchController.swift */; };
 		2968B4C31F79A06D00C8B2CF /* ResultRowModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */; };
 		29694F881F75A63300035D5D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29694F871F75A63300035D5D /* MapKit.framework */; };
 		29694F8A1F75AC1100035D5D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29694F891F75AC1100035D5D /* MapViewModel.swift */; };
-		298122A31F770A2200B942F7 /* VehicleCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298122A21F770A2200B942F7 /* VehicleCallout.xib */; };
-		298122A51F770A4100B942F7 /* VehicleCallout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298122A41F770A4100B942F7 /* VehicleCallout.swift */; };
-		29A0087B1F7677920056102B /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0087A1F7677920056102B /* VehicleType.swift */; };
 		29A0087D1F76791F0056102B /* VehicleStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0087C1F76791F0056102B /* VehicleStop.swift */; };
 		29A008851F76A1BC0056102B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008841F76A1BC0056102B /* Constants.swift */; };
 		29A008881F76A2D50056102B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008871F76A2D50056102B /* UIColor+Extension.swift */; };
 		29A0088A1F76AA240056102B /* MarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008891F76AA240056102B /* MarkerViewModel.swift */; };
-		29A0088E1F76E5C00056102B /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0088D1F76E5C00056102B /* CustomMarkerView.swift */; };
-		29A008901F76F8CE0056102B /* MarkerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0088F1F76F8CE0056102B /* MarkerType.swift */; };
+		29A0088E1F76E5C00056102B /* VehicleAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0088D1F76E5C00056102B /* VehicleAnnotationView.swift */; };
 		29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7006A1F75A1670072D88C /* AppDelegate.swift */; };
-		29B7006D1F75A1670072D88C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7006C1F75A1670072D88C /* ViewController.swift */; };
+		29B7006D1F75A1670072D88C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7006C1F75A1670072D88C /* MapViewController.swift */; };
 		29B700701F75A1670072D88C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B7006E1F75A1670072D88C /* Main.storyboard */; };
 		29B700721F75A1670072D88C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29B700711F75A1670072D88C /* Assets.xcassets */; };
 		29B700751F75A1670072D88C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B700731F75A1670072D88C /* LaunchScreen.storyboard */; };
@@ -35,22 +32,19 @@
 /* Begin PBXFileReference section */
 		2900FEE81F75BD3F002C1186 /* ZditmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZditmService.swift; sourceTree = "<group>"; };
 		2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePosition.swift; sourceTree = "<group>"; };
+		2925E51D1F7AFE0D009BFD9C /* RouteGeoJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteGeoJson.swift; sourceTree = "<group>"; };
 		293225071F7734530040C747 /* ResultSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchController.swift; sourceTree = "<group>"; };
 		2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRowModelView.swift; sourceTree = "<group>"; };
 		29694F871F75A63300035D5D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		29694F891F75AC1100035D5D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		298122A21F770A2200B942F7 /* VehicleCallout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleCallout.xib; sourceTree = "<group>"; };
-		298122A41F770A4100B942F7 /* VehicleCallout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCallout.swift; sourceTree = "<group>"; };
-		29A0087A1F7677920056102B /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
 		29A0087C1F76791F0056102B /* VehicleStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleStop.swift; sourceTree = "<group>"; };
 		29A008841F76A1BC0056102B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		29A008871F76A2D50056102B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		29A008891F76AA240056102B /* MarkerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewModel.swift; sourceTree = "<group>"; };
-		29A0088D1F76E5C00056102B /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
-		29A0088F1F76F8CE0056102B /* MarkerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerType.swift; sourceTree = "<group>"; };
+		29A0088D1F76E5C00056102B /* VehicleAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAnnotationView.swift; sourceTree = "<group>"; };
 		29B700671F75A1670072D88C /* zditm-gps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zditm-gps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B7006A1F75A1670072D88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29B7006C1F75A1670072D88C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		29B7006C1F75A1670072D88C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		29B7006F1F75A1670072D88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29B700711F75A1670072D88C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29B700741F75A1670072D88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,10 +81,7 @@
 		29A0087E1F7693540056102B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				29A0088D1F76E5C00056102B /* CustomMarkerView.swift */,
-				29A0088F1F76F8CE0056102B /* MarkerType.swift */,
-				298122A21F770A2200B942F7 /* VehicleCallout.xib */,
-				298122A41F770A4100B942F7 /* VehicleCallout.swift */,
+				29A0088D1F76E5C00056102B /* VehicleAnnotationView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -142,8 +133,8 @@
 		29B7007C1F75A2540072D88C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				29A008891F76AA240056102B /* MarkerViewModel.swift */,
 				29694F891F75AC1100035D5D /* MapViewModel.swift */,
+				29A008891F76AA240056102B /* MarkerViewModel.swift */,
 				29F9C0E31F77E377008D6CB2 /* SearchViewModel.swift */,
 				2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */,
 			);
@@ -153,7 +144,7 @@
 		29B7007D1F75A2590072D88C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				29B7006C1F75A1670072D88C /* ViewController.swift */,
+				29B7006C1F75A1670072D88C /* MapViewController.swift */,
 				293225071F7734530040C747 /* ResultSearchController.swift */,
 				29F9C0E71F77EADF008D6CB2 /* ResultTableViewCell.swift */,
 			);
@@ -164,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */,
-				29A0087A1F7677920056102B /* VehicleType.swift */,
 				29A0087C1F76791F0056102B /* VehicleStop.swift */,
+				2925E51D1F7AFE0D009BFD9C /* RouteGeoJson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,7 +257,6 @@
 				29B700751F75A1670072D88C /* LaunchScreen.storyboard in Resources */,
 				29B700721F75A1670072D88C /* Assets.xcassets in Resources */,
 				29B700701F75A1670072D88C /* Main.storyboard in Resources */,
-				298122A31F770A2200B942F7 /* VehicleCallout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,10 +286,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-zditm-gps/Pods-zditm-gps-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GEOSwift/GEOSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/geos/geos.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GEOSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/geos.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,23 +327,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				298122A51F770A4100B942F7 /* VehicleCallout.swift in Sources */,
 				29A0088A1F76AA240056102B /* MarkerViewModel.swift in Sources */,
 				29A0087D1F76791F0056102B /* VehicleStop.swift in Sources */,
-				29B7006D1F75A1670072D88C /* ViewController.swift in Sources */,
+				29B7006D1F75A1670072D88C /* MapViewController.swift in Sources */,
 				293225081F7734530040C747 /* ResultSearchController.swift in Sources */,
 				29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */,
+				2925E51E1F7AFE0D009BFD9C /* RouteGeoJson.swift in Sources */,
 				2968B4C31F79A06D00C8B2CF /* ResultRowModelView.swift in Sources */,
 				29F9C0E81F77EADF008D6CB2 /* ResultTableViewCell.swift in Sources */,
 				29F9C0E41F77E377008D6CB2 /* SearchViewModel.swift in Sources */,
-				29A0088E1F76E5C00056102B /* CustomMarkerView.swift in Sources */,
+				29A0088E1F76E5C00056102B /* VehicleAnnotationView.swift in Sources */,
 				29A008881F76A2D50056102B /* UIColor+Extension.swift in Sources */,
 				2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */,
-				29A0087B1F7677920056102B /* VehicleType.swift in Sources */,
 				29A008851F76A1BC0056102B /* Constants.swift in Sources */,
 				2900FEE91F75BD3F002C1186 /* ZditmService.swift in Sources */,
 				29694F8A1F75AC1100035D5D /* MapViewModel.swift in Sources */,
-				29A008901F76F8CE0056102B /* MarkerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

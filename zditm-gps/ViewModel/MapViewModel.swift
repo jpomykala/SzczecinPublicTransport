@@ -19,14 +19,16 @@ class MapViewModel {
     private var highlightedLine = ""
     
     private var vehicles: [VehiclePostion]
+    private var routePoints: [CLLocationCoordinate2D]
     
     init(_ delegate: MapScreenProtocol) {
         self.delegate = delegate
         self.zditmService = ZditmService()
         self.vehicles = []
+        self.routePoints = []
         self.locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+//        locationManager.startUpdatingLocation()
         updateVehiclePositions()
         scheduledTimerWithTimeInterval()
     }
@@ -39,8 +41,14 @@ class MapViewModel {
         }
     }
     
+    var vehicleRoute : MKPolyline {
+        let polyline = MKPolyline(coordinates: self.routePoints, count: self.routePoints.count)
+        return polyline
+    }
+
+    
     func scheduledTimerWithTimeInterval(){
-        timer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
     }
     
     @objc func updateCounting(){
@@ -61,7 +69,18 @@ class MapViewModel {
                 self.vehicles = vehicles
             } else{
                 self.vehicles = vehicles.filter({$0.line == self.highlightedLine})
+                self.vehicles.forEach({ (vehicle) in
+                    self.higlightRoute(gmvid: vehicle.gmvid!)
+                })
             }
+            self.delegate.updateView()
+        }
+    }
+    
+    
+    func higlightRoute(gmvid: Int){
+        self.zditmService.fetchRoute(gmvid: gmvid) { (points) in
+            self.routePoints = points
             self.delegate.updateView()
         }
     }

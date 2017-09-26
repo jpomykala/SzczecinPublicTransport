@@ -10,7 +10,9 @@ import Foundation
 import MapKit
 
 struct VehiclePostion: Decodable {
+    
     var id: Int?
+    var gmvid: Int?
     var line: String?
     var icon: String?
     var from: String?
@@ -20,6 +22,7 @@ struct VehiclePostion: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case id
+        case gmvid
         case line = "linia"
         case type = "typlinii"
         case from = "z"
@@ -36,6 +39,7 @@ extension VehiclePostion {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let idString = try container.decode(String.self, forKey: .id)
         id = Int(idString)
+        gmvid = try container.decode(Int.self, forKey: .gmvid)
         line = try container.decode(String.self, forKey: .line)
         let typeString = try container.decode(String.self, forKey: .type)
         
