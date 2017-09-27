@@ -16,7 +16,7 @@ class VehicleAnnotationView: MKMarkerAnnotationView {
         willSet {
             guard let annotation = newValue as? MarkerViewModel else { return }
             
-            animatesWhenAdded = false
+            animatesWhenAdded = true
             glyphText = annotation.icon ?? ""
             clusteringIdentifier = nil
             markerTintColor = UIColor(hexString: "#64B5F6")

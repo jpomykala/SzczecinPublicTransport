@@ -10,6 +10,7 @@
 		0C8D693B6F7CAFDD0B4AA3CF /* Pods_zditm_gps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92BE20758D96EA57A9852C1 /* Pods_zditm_gps.framework */; };
 		2900FEE91F75BD3F002C1186 /* ZditmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEE81F75BD3F002C1186 /* ZditmService.swift */; };
 		2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */; };
+		291DBE791F7C53CC002E7DDA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DBE781F7C53CC002E7DDA /* Alert.swift */; };
 		2925E51E1F7AFE0D009BFD9C /* RouteGeoJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2925E51D1F7AFE0D009BFD9C /* RouteGeoJson.swift */; };
 		293225081F7734530040C747 /* ResultSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293225071F7734530040C747 /* ResultSearchController.swift */; };
 		2968B4C31F79A06D00C8B2CF /* ResultRowModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		2900FEE81F75BD3F002C1186 /* ZditmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZditmService.swift; sourceTree = "<group>"; };
 		2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePosition.swift; sourceTree = "<group>"; };
+		291DBE781F7C53CC002E7DDA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2925E51D1F7AFE0D009BFD9C /* RouteGeoJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteGeoJson.swift; sourceTree = "<group>"; };
 		293225071F7734530040C747 /* ResultSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchController.swift; sourceTree = "<group>"; };
 		2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRowModelView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */,
 				29A0087C1F76791F0056102B /* VehicleStop.swift */,
 				2925E51D1F7AFE0D009BFD9C /* RouteGeoJson.swift */,
+				291DBE781F7C53CC002E7DDA /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,16 +289,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-zditm-gps/Pods-zditm-gps-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GEOSwift/GEOSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/geos/geos.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GEOSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/geos.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -341,6 +338,7 @@
 				2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */,
 				29A008851F76A1BC0056102B /* Constants.swift in Sources */,
 				2900FEE91F75BD3F002C1186 /* ZditmService.swift in Sources */,
+				291DBE791F7C53CC002E7DDA /* Alert.swift in Sources */,
 				29694F8A1F75AC1100035D5D /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,7 +26,8 @@ class ZditmService  {
         }
     }
     
-    func fetchStops(lineNumber: Int, completition: @escaping (_ result: [VehicleStop]) -> Void){
+    func fetchStops(lineNumber: String, completition: @escaping (_ result: [VehicleStop]) -> Void) {
+        print("Fetching stops for", lineNumber, "line")
         let url = baseUrl + "json/slupki.inc.php?linia=\(lineNumber)"
         Alamofire.request(url).responseJSON { response in
             guard let data = response.data, let stops = try? JSONDecoder().decode([VehicleStop].self, from: data) else {
@@ -34,11 +35,28 @@ class ZditmService  {
                 completition([])
                 return
             }
+            if stops.count > 30 {
+                completition([])
+                return
+            }
             completition(stops)
         }
     }
     
+    func fetchAlerts(completition: @escaping (_ result: [Alert]) -> Void){
+        let url = baseUrl + "json/zmianyrj.inc.php";
+        Alamofire.request(url).responseJSON { response in
+            guard let data = response.data, let alerts = try? JSONDecoder().decode([Alert].self, from: data) else {
+                print("Error during Alerts decoding!")
+                completition([])
+                return
+            }
+            completition(alerts)
+        }
+    }
+    
     func fetchRoute(gmvid: Int, completition: @escaping (_ result: [CLLocationCoordinate2D]) -> Void){
+        print("Fetching stops for", gmvid, "gmvid")
         let url = baseUrl + "json/trasy.inc.php?gmvid=\(gmvid)"
         
         Alamofire.request(url).responseJSON{ response in
@@ -60,9 +78,9 @@ class ZditmService  {
                     }
                 })
             completition(routePoints)
-          
+            
         }
         
     }
-
+    
 }

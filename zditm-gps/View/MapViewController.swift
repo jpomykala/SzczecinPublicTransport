@@ -14,15 +14,14 @@ protocol MapScreenProtocol {
 }
 
 protocol HandleLineSelectedDelegate {
-    func highlightLine(line: String)
+    func onLineSelected(line: String)
 }
 
 class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelectedDelegate, MKMapViewDelegate {
     
     @IBOutlet var searchVar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
-    var resultSearchController: UISearchController? = nil
-    var searchBar: UISearchBar? = nil
+    var searchBar: UISearchBar!
     var viewModel: MapViewModel!
     
     override func viewDidLoad() {
@@ -34,16 +33,16 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
     }
     
     private func setupSearchBar(){
-        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "ResultSearchController") as! ResultSearchController
-        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
-        resultSearchController?.searchResultsUpdater = locationSearchTable
-        locationSearchTable.delegate = self
-        searchBar = resultSearchController!.searchBar
+        let resultSearchController = storyboard!.instantiateViewController(withIdentifier: "ResultSearchController") as! ResultSearchController
+        let searchController = UISearchController(searchResultsController: resultSearchController)
+        searchController.searchResultsUpdater = resultSearchController
+        resultSearchController.delegate = self
+        searchBar = searchController.searchBar
         searchBar!.sizeToFit()
-        searchBar!.placeholder = "Szukaj linii lub przystanku"
-        navigationItem.titleView = resultSearchController?.searchBar
-        resultSearchController?.hidesNavigationBarDuringPresentation = false
-        resultSearchController?.dimsBackgroundDuringPresentation = true
+        searchBar!.placeholder = "Search bus or tram line"
+        navigationItem.titleView = searchController.searchBar
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
     }
     
@@ -59,7 +58,6 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
         mapView.showsUserLocation = true
         mapView.showsCompass = true
         mapView.showsScale = true
-        
         mapView.register(VehicleAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
@@ -71,41 +69,30 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
         button.layer.cornerRadius = 5
         button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button)
-        
-        let scale = MKScaleView(mapView: mapView)
-        scale.legendAlignment = .trailing
-        scale.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(scale)
-        
-        NSLayoutConstraint.activate([button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
-                                     button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-                                     scale.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -10),
-                                     scale.centerYAnchor.constraint(equalTo: button.centerYAnchor)])
+        NSLayoutConstraint.activate([button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
+                                     button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)])
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-
-        // draw the track
         let polyLine = overlay
         let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
         polyLineRenderer.strokeColor = UIColor.blue
-        polyLineRenderer.lineWidth = 2.0
-        
+        polyLineRenderer.alpha = 0.3
+        polyLineRenderer.lineWidth = 7.0
         return polyLineRenderer
-        
     }
     
     func updateView() {
-        DispatchQueue.main.async {
-            self.mapView.removeAnnotations(self.mapView.annotations)
-            self.mapView.addAnnotations(self.viewModel.vehicleMarkers)
-            self.mapView.removeOverlays(self.mapView.overlays)
-            self.mapView.add(self.viewModel.vehicleRoute)
-        }
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        self.mapView.removeOverlays(self.mapView.overlays)
+        self.mapView.addAnnotations(self.viewModel.vehicleStops)
+        self.mapView.addAnnotations(self.viewModel.vehicleMarkers)
+        self.mapView.add(self.viewModel.vehicleRoute)
     }
     
-    func highlightLine(line: String) {
-        viewModel.highlightLine(line: line)
+    
+    func onLineSelected(line: String) {
+        viewModel.userRequestHighlightLine(line: line)
         searchBar?.text = line
     }
 }

@@ -20,15 +20,17 @@ class MapViewModel {
     
     private var vehicles: [VehiclePostion]
     private var routePoints: [CLLocationCoordinate2D]
+    private var stops: [VehicleStop]
     
     init(_ delegate: MapScreenProtocol) {
         self.delegate = delegate
         self.zditmService = ZditmService()
+        self.locationManager = CLLocationManager()
         self.vehicles = []
         self.routePoints = []
-        self.locationManager = CLLocationManager()
+        self.stops = []
+        
         locationManager.requestWhenInUseAuthorization()
-//        locationManager.startUpdatingLocation()
         updateVehiclePositions()
         scheduledTimerWithTimeInterval()
     }
@@ -45,21 +47,21 @@ class MapViewModel {
         let polyline = MKPolyline(coordinates: self.routePoints, count: self.routePoints.count)
         return polyline
     }
-
     
-    func scheduledTimerWithTimeInterval(){
-        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateCounting(){
-        DispatchQueue.main.async {
-            self.updateVehiclePositions()
+    var vehicleStops : [MarkerViewModel] {
+        return stops
+            .filter({ $0.location != nil})
+            .map { (stop) -> MarkerViewModel in
+                return MarkerViewModel(stop)
         }
     }
     
-    func updateVehiclePositions(){
+    private func scheduledTimerWithTimeInterval(){
+        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.updateVehiclePositions), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func updateVehiclePositions(){
         print("Refreshing vehicles")
-        
         zditmService.fetchBuses { (vehicles) in
             if vehicles.isEmpty {
                 return
@@ -69,23 +71,31 @@ class MapViewModel {
                 self.vehicles = vehicles
             } else{
                 self.vehicles = vehicles.filter({$0.line == self.highlightedLine})
-                self.vehicles.forEach({ (vehicle) in
-                    self.higlightRoute(gmvid: vehicle.gmvid!)
-                })
+                if !self.vehicles.isEmpty{
+                    self.higlightRoute(vehicle: self.vehicles[0])
+                }
             }
             self.delegate.updateView()
         }
     }
     
-    
-    func higlightRoute(gmvid: Int){
+    private func higlightRoute(vehicle: VehiclePostion){
+        guard let gmvid = vehicle.gmvid, let line = vehicle.line else {
+            return
+        }
+        
         self.zditmService.fetchRoute(gmvid: gmvid) { (points) in
             self.routePoints = points
             self.delegate.updateView()
         }
+        
+        self.zditmService.fetchStops(lineNumber: line) { (stops) in
+            self.stops = stops
+            self.delegate.updateView()
+        }
     }
     
-    func highlightLine(line: String) {
+    func userRequestHighlightLine(line: String) {
         self.highlightedLine = line
         updateVehiclePositions()
     }

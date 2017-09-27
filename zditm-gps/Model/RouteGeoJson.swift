@@ -24,12 +24,12 @@ class Geometry: Codable {
 // Serialization extensions
 
 extension OtherRouteGeoJson {
-    static func from(json json: String, using encoding: String.Encoding = .utf8) -> OtherRouteGeoJson? {
+    static func from(json: String, using encoding: String.Encoding = .utf8) -> OtherRouteGeoJson? {
         guard let data = json.data(using: encoding) else { return nil }
         return OtherRouteGeoJson.from(data: data)
     }
     
-    static func from(data data: Data) -> OtherRouteGeoJson? {
+    static func from(data: Data) -> OtherRouteGeoJson? {
         let decoder = JSONDecoder()
         return try? decoder.decode(OtherRouteGeoJson.self, from: data)
     }

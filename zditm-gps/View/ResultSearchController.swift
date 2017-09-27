@@ -30,7 +30,7 @@ class ResultSearchController: UITableViewController, UISearchResultsUpdating, Re
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +40,7 @@ class ResultSearchController: UITableViewController, UISearchResultsUpdating, Re
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = viewModel.getCellViewModel(indexPath)
         viewModel.updateQuery(cellViewModel.line)
-        delegate?.highlightLine(line: cellViewModel.line)
+        delegate?.onLineSelected(line: cellViewModel.line)
         dismiss(animated: true, completion: nil)
     }
     

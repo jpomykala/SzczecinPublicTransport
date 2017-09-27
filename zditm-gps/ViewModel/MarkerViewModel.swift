@@ -37,5 +37,12 @@ final class MarkerViewModel: NSObject, MKAnnotation {
         self.subtitle = subtitle
     }
     
+    
+    init(_ stop: VehicleStop) {
+        self.title = "\(stop.name ?? "")"
+        self.coordinate = stop.location!
+        self.icon = "P"
+        self.subtitle = ""
+    }
 
 }
