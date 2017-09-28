@@ -25,23 +25,47 @@ class ResultRowModelView {
     }
     
     var title: String {
-        return "\(vehicle.icon ?? "") Linia \(vehicle.line ?? "nieznana linia")"
+        return "\(vehicle.line ?? "??")"
     }
     
     var delay: String {
         
        guard let delay = vehicle.delay else {
-            return "nieznane"
+            return "??"
+        }
+        
+        if delay == 0 {
+            return "👌"
+        }
+        
+        return String(format: "%02d", abs(delay))
+    }
+    
+    var delayText: String {
+        
+        guard let delay = vehicle.delay else {
+            return "??"
         }
         
         if delay < 0 {
-            return "🕑 Opóźnienie \(abs(delay)) min"
+            return "opóźnienie"
         }
         
         if delay > 0 {
-            return "🕑 \(delay) min szybciej"
+            return "szybciej"
         }
-        return "🕑 Zgodnie z rozkładem"
+        return "zgodnie z rozkładem"
+    }
+    
+    var minutes: String {
+        guard let delay = vehicle.delay else {
+            return ""
+        }
+        if delay != 0 {
+            return "min"
+        }
+        
+        return ""
     }
     
     var from: String {

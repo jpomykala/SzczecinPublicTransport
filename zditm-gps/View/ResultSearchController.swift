@@ -50,8 +50,11 @@ class ResultSearchController: UITableViewController, UISearchResultsUpdating, Re
         }
         
         let cellViewModel = viewModel.getCellViewModel(indexPath)
+        
         cell.titleLabel.text = cellViewModel.title
         cell.delayLabel.text = cellViewModel.delay
+        cell.delayTextLabel.text = cellViewModel.delayText
+        cell.minutesLabel.text = cellViewModel.minutes
         cell.fromLabel.text = cellViewModel.from
         cell.toLabel.text = cellViewModel.to
         return cell

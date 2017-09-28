@@ -19,9 +19,7 @@ protocol HandleLineSelectedDelegate {
 
 class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelectedDelegate, MKMapViewDelegate {
     
-    @IBOutlet var searchVar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
-    var searchBar: UISearchBar!
     var viewModel: MapViewModel!
     
     override func viewDidLoad() {
@@ -37,13 +35,13 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
         let searchController = UISearchController(searchResultsController: resultSearchController)
         searchController.searchResultsUpdater = resultSearchController
         resultSearchController.delegate = self
-        searchBar = searchController.searchBar
-        searchBar!.sizeToFit()
-        searchBar!.placeholder = "Search bus or tram line"
-        navigationItem.titleView = searchController.searchBar
+        let searchBar = searchController.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search bus or tram line"
+        navigationItem.titleView = searchBar
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = true
-        definesPresentationContext = true
+        self.definesPresentationContext = true
     }
     
     private func setupMap(){
@@ -52,12 +50,9 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
         let coordinateSpan = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
         let cityRegion = MKCoordinateRegion(center: cityCenter, span: coordinateSpan)
         mapView.setRegion(cityRegion, animated: true)
-        mapView.mapType = .mutedStandard
         mapView.delegate = self
         mapView.showsTraffic = true
         mapView.showsUserLocation = true
-        mapView.showsCompass = true
-        mapView.showsScale = true
         mapView.register(VehicleAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
@@ -93,7 +88,6 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
     
     func onLineSelected(line: String) {
         viewModel.userRequestHighlightLine(line: line)
-        searchBar?.text = line
     }
 }
 

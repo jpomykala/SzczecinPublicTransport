@@ -13,16 +13,12 @@ class SearchViewModel {
     
     private var delegate: ResultSearchDelegate
     private var zditmService: ZditmService
-    private var locationManager: CLLocationManager
     private var vehicles: [VehiclePostion]
     private var filteredVehicles: [VehiclePostion]
     
     init(_ delegate: ResultSearchDelegate) {
         self.delegate = delegate
         self.zditmService = ZditmService()
-        
-        
-        self.locationManager = CLLocationManager()
         self.vehicles = []
         self.filteredVehicles = []
         self.zditmService.fetchBuses { (vehicles) in
