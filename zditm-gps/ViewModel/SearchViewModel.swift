@@ -30,7 +30,7 @@ class SearchViewModel {
         return ResultRowModelView(filteredVehicles[indexPath.row])
     }
     
-    var numberOfSections: Int {
+    var rows: Int {
         return filteredVehicles.count
     }
     

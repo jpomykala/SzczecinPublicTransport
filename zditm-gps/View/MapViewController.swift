@@ -19,29 +19,32 @@ protocol HandleLineSelectedDelegate {
 
 class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelectedDelegate, MKMapViewDelegate {
     
+    var searchController = UISearchController(searchResultsController: nil)
+    var resultSearchController: ResultSearchController!
+    
     @IBOutlet var mapView: MKMapView!
     var viewModel: MapViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModel = MapViewModel(self)
         setupMap()
         setupSearchBar()
         setupUserTrackingButtonAndScaleView()
-        self.viewModel = MapViewModel(self)
     }
     
     private func setupSearchBar(){
-        let resultSearchController = storyboard!.instantiateViewController(withIdentifier: "ResultSearchController") as! ResultSearchController
-        let searchController = UISearchController(searchResultsController: resultSearchController)
-        searchController.searchResultsUpdater = resultSearchController
-        resultSearchController.delegate = self
+        let searchControllerId = "storyboardResultSearchController"
+        resultSearchController = storyboard!.instantiateViewController(withIdentifier: searchControllerId) as! ResultSearchController
+        searchController = UISearchController(searchResultsController: resultSearchController)
         let searchBar = searchController.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search bus or tram line"
         navigationItem.titleView = searchBar
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = true
-        self.definesPresentationContext = true
+        searchController.searchResultsUpdater = resultSearchController
+        definesPresentationContext = true
     }
     
     private func setupMap(){
@@ -78,11 +81,13 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
     }
     
     func updateView() {
-        self.mapView.removeAnnotations(self.mapView.annotations)
-        self.mapView.removeOverlays(self.mapView.overlays)
-        self.mapView.addAnnotations(self.viewModel.vehicleStops)
-        self.mapView.addAnnotations(self.viewModel.vehicleMarkers)
-        self.mapView.add(self.viewModel.vehicleRoute)
+        DispatchQueue.main.async {
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            self.mapView.removeOverlays(self.mapView.overlays)
+            self.mapView.addAnnotations(self.viewModel.vehicleStops)
+            self.mapView.addAnnotations(self.viewModel.vehicleMarkers)
+            self.mapView.add(self.viewModel.vehicleRoute)
+        }
     }
     
     

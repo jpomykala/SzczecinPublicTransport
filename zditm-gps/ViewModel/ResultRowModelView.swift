@@ -48,7 +48,7 @@ class ResultRowModelView {
         }
         
         if delay < 0 {
-            return "opóźnienie"
+            return "opóźnienia"
         }
         
         if delay > 0 {

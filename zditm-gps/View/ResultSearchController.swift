@@ -23,18 +23,14 @@ class ResultSearchController: UITableViewController, UISearchResultsUpdating, Re
         super.viewDidLoad()
         self.viewModel = SearchViewModel(self)
     }
-    
+
     func updateSearchResults(for searchController: UISearchController) {
         let line = searchController.searchBar.text ?? ""
         viewModel.updateQuery(line)
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfSections
+        return viewModel.rows
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -50,7 +46,6 @@ class ResultSearchController: UITableViewController, UISearchResultsUpdating, Re
         }
         
         let cellViewModel = viewModel.getCellViewModel(indexPath)
-        
         cell.titleLabel.text = cellViewModel.title
         cell.delayLabel.text = cellViewModel.delay
         cell.delayTextLabel.text = cellViewModel.delayText
