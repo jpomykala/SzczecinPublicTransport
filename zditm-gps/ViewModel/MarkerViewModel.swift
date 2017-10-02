@@ -14,10 +14,11 @@ final class MarkerViewModel: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     let subtitle: String?
     let icon: String!
+    let line: String?
     
     init(_ vehicle: VehiclePostion) {
         self.title = "\(vehicle.icon ?? "") Linia \(vehicle.line ?? "nieznana linia")"
-        
+        self.line = vehicle.line ?? ""
         self.coordinate = vehicle.location!
         self.icon = vehicle.icon ?? ""
         
@@ -43,6 +44,7 @@ final class MarkerViewModel: NSObject, MKAnnotation {
         self.coordinate = stop.location!
         self.icon = "P"
         self.subtitle = ""
+        self.line = ""
     }
 
 }

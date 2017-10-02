@@ -9,20 +9,22 @@
 import UIKit
 import MapKit
 
-protocol MapScreenProtocol {
+protocol MapScreenDelegate {
     func updateView()
+    func showAlert(error: String)
 }
 
 protocol HandleLineSelectedDelegate {
-    func onLineSelected(line: String)
+    func onSelection(line: String)
+    func onSelection(id: Int)
+    func resetSelection()
 }
 
-class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelectedDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, MapScreenDelegate, HandleLineSelectedDelegate, MKMapViewDelegate {
+    @IBOutlet var mapView: MKMapView!
     
     var searchController = UISearchController(searchResultsController: nil)
-    var resultSearchController: ResultSearchController!
-    
-    @IBOutlet var mapView: MKMapView!
+    var resultSearchController: ResultTableViewController!
     var viewModel: MapViewModel!
     
     override func viewDidLoad() {
@@ -33,13 +35,14 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
         setupUserTrackingButtonAndScaleView()
     }
     
-    private func setupSearchBar(){
-        let searchControllerId = "storyboardResultSearchController"
-        resultSearchController = storyboard!.instantiateViewController(withIdentifier: searchControllerId) as! ResultSearchController
+    private func setupSearchBar() {
+        let searchControllerId = "resultTableViewController"
+        resultSearchController = storyboard!.instantiateViewController(withIdentifier: searchControllerId) as! ResultTableViewController
+        resultSearchController.delegate = self
         searchController = UISearchController(searchResultsController: resultSearchController)
         let searchBar = searchController.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Search bus or tram line"
+        searchBar.placeholder = "Wyszukaj linię autobusową lub tramwajową"
         navigationItem.titleView = searchBar
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = true
@@ -47,7 +50,7 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
         definesPresentationContext = true
     }
     
-    private func setupMap(){
+    private func setupMap() {
         let cityCenter = CLLocationCoordinate2D(latitude: 53.4285, longitude: 14.5528)
         let span = 0.16
         let coordinateSpan = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
@@ -56,7 +59,7 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
         mapView.delegate = self
         mapView.showsTraffic = true
         mapView.showsUserLocation = true
-        mapView.register(VehicleAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        mapView.register(VehicleMarkerView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
     private func setupUserTrackingButtonAndScaleView() {
@@ -90,9 +93,22 @@ class MapViewController: UIViewController, MapScreenProtocol, HandleLineSelected
         }
     }
     
+    func showAlert(error: String){
+        let alert = UIAlertController(title: "Usługa niedostępna", message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
-    func onLineSelected(line: String) {
-        viewModel.userRequestHighlightLine(line: line)
+    func onSelection(line: String) {
+        viewModel.userHiglightRequest(line: line)
+    }
+    
+    func onSelection(id: Int) {
+        viewModel.userHiglightRequest(id: id)
+    }
+    
+    func resetSelection() {
+         viewModel.userResetSelectionRequest()
     }
 }
 

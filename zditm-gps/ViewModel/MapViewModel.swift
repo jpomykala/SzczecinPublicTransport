@@ -12,17 +12,17 @@ import Alamofire
 
 class MapViewModel {
     
-    private var delegate: MapScreenProtocol
+    private var delegate: MapScreenDelegate
     private var zditmService: ZditmService
     private var locationManager: CLLocationManager
-    private var timer = Timer()
-    private var highlightedLine = ""
+    private var highlightedLine: String?
+    private var highlightedVehicle: Int?
     
     private var vehicles: [VehiclePostion]
     private var routePoints: [CLLocationCoordinate2D]
     private var stops: [VehicleStop]
     
-    init(_ delegate: MapScreenProtocol) {
+    init(_ delegate: MapScreenDelegate) {
         self.delegate = delegate
         self.zditmService = ZditmService()
         self.locationManager = CLLocationManager()
@@ -32,15 +32,11 @@ class MapViewModel {
         
         locationManager.requestWhenInUseAuthorization()
         updateVehiclePositions()
-        scheduledTimerWithTimeInterval()
+        Timer.scheduledTimer(timeInterval: 35, target: self, selector: #selector(self.updateVehiclePositions), userInfo: nil, repeats: true)
     }
     
     var vehicleMarkers: [MarkerViewModel]{
-        return vehicles
-            .filter({ $0.location != nil})
-            .map { (vehicle) -> MarkerViewModel in
-                return MarkerViewModel(vehicle)
-        }
+        return vehicles.filter{ $0.location != nil}.map { MarkerViewModel($0) }
     }
     
     var vehicleRoute : MKPolyline {
@@ -49,37 +45,36 @@ class MapViewModel {
     }
     
     var vehicleStops : [MarkerViewModel] {
-        return stops
-            .filter({ $0.location != nil})
-            .map { (stop) -> MarkerViewModel in
-                return MarkerViewModel(stop)
-        }
-    }
-    
-    private func scheduledTimerWithTimeInterval(){
-        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.updateVehiclePositions), userInfo: nil, repeats: true)
+        return stops.filter{ $0.location != nil}.map { MarkerViewModel($0) }
     }
     
     @objc private func updateVehiclePositions(){
         print("Refreshing vehicles")
-        zditmService.fetchBuses { (vehicles) in
-            if vehicles.isEmpty {
-                return
-            }
+        zditmService.fetchBuses(success: { (vehicles) in
             
-            if self.highlightedLine.isEmpty {
+            if self.highlightedLine == nil && self.highlightedVehicle == nil {
                 self.vehicles = vehicles
-            } else{
+                self.stops = []
+                self.routePoints = []
+                
+            } else if(self.highlightedLine != nil) {
                 self.vehicles = vehicles.filter({$0.line == self.highlightedLine})
+                if !self.vehicles.isEmpty{
+                    self.higlightRoute(vehicle: self.vehicles[0])
+                }
+            } else if(self.highlightedVehicle != nil) {
+                self.vehicles = vehicles.filter({$0.id == self.highlightedVehicle})
                 if !self.vehicles.isEmpty{
                     self.higlightRoute(vehicle: self.vehicles[0])
                 }
             }
             self.delegate.updateView()
+        }) { (error) in
+            self.delegate.showAlert(error: error)
         }
     }
     
-    private func higlightRoute(vehicle: VehiclePostion){
+    private func higlightRoute(vehicle: VehiclePostion) {
         guard let gmvid = vehicle.gmvid, let line = vehicle.line else {
             return
         }
@@ -95,8 +90,21 @@ class MapViewModel {
         }
     }
     
-    func userRequestHighlightLine(line: String) {
+    func userHiglightRequest(id: Int) {
+        self.highlightedVehicle = id
+        self.highlightedLine = nil
+        updateVehiclePositions()
+    }
+    
+    func userHiglightRequest(line: String) {
+        self.highlightedVehicle = nil
         self.highlightedLine = line
+        updateVehiclePositions()
+    }
+    
+    func userResetSelectionRequest(){
+        self.highlightedLine = nil
+        self.highlightedVehicle = nil
         updateVehiclePositions()
     }
 }

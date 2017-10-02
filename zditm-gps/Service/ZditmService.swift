@@ -14,15 +14,42 @@ class ZditmService  {
     
     let baseUrl = "http://www.zditm.szczecin.pl/"
     
-    func fetchBuses(completition: @escaping (_ result: [VehiclePostion]) -> Void) {
+    func fetchBuses(
+        success completition: @escaping (_ result: [VehiclePostion]) -> (),
+        failure onError: @escaping (_ error: String) -> ()) {
         let url = baseUrl + "json/pojazdy.inc.php"
         Alamofire.request(url).responseJSON { response in
+            print("Success: \(response.result.isSuccess)")
             guard let data = response.data, let vehicles =  try? JSONDecoder().decode([VehiclePostion].self, from: data) else {
-                print("Error during Vehicles decoding!")
-                completition([])
+                print("Failure Reason: \(response.response?.statusCode ?? 0)")
+                onError("Error during Vehicles decoding!")
                 return
             }
             completition(vehicles)
+        }
+    }
+    
+    func fetchStopDepartureAlert(
+        lineNumber: String,
+        stopId: Int,
+        success: @escaping (_ result: StopDepartureInfo) -> ()){
+        let url = baseUrl + "json/tabliczka.inc.php?linia=\(lineNumber)&slupek=\(stopId)"
+        Alamofire.request(url).responseJSON { response in
+            guard let data = response.data, let departureInfo = try? JSONDecoder().decode(StopDepartureInfo.self, from: data) else {
+                return
+            }
+            success(departureInfo)
+        }
+    }
+    
+    func fetchStopDepartures(stopId: Int,success: @escaping (_ result: StopDepartureInfo) -> ()){
+        let url = baseUrl + "json/slupekkursy.inc.php?slupek=\(stopId)"
+        //FIX this - http://www.zditm.szczecin.pl/json/slupekkursy.inc.php?slupek=13
+        Alamofire.request(url).responseJSON { response in
+            guard let data = response.data, let departureInfo = try? JSONDecoder().decode(StopDepartureInfo.self, from: data) else {
+                return
+            }
+            success(departureInfo)
         }
     }
     
@@ -32,6 +59,7 @@ class ZditmService  {
         Alamofire.request(url).responseJSON { response in
             guard let data = response.data, let stops = try? JSONDecoder().decode([VehicleStop].self, from: data) else {
                 print("Error during Stops decoding!")
+                print("Failure Reason: \(response.response?.statusCode ?? 0)")
                 completition([])
                 return
             }
@@ -48,6 +76,7 @@ class ZditmService  {
         Alamofire.request(url).responseJSON { response in
             guard let data = response.data, let alerts = try? JSONDecoder().decode([Alert].self, from: data) else {
                 print("Error during Alerts decoding!")
+                print("Failure Reason: \(response.response?.statusCode ?? 0)")
                 completition([])
                 return
             }
@@ -62,6 +91,7 @@ class ZditmService  {
         Alamofire.request(url).responseJSON{ response in
             guard let data = response.data, let geojson = try? JSONDecoder().decode(RouteGeoJson.self, from: data) else {
                 print("Error during Stops decoding!")
+                print("Failure Reason: \(response.response?.statusCode ?? 0)")
                 completition([])
                 return
             }

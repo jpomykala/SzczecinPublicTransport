@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 import MapKit
 
-class VehicleAnnotationView: MKMarkerAnnotationView {
+class VehicleMarkerView: MKMarkerAnnotationView {
+    
+    var line: String?
     
     override var annotation: MKAnnotation? {
         willSet {
             guard let annotation = newValue as? MarkerViewModel else { return }
-            
+            self.line = annotation.line ?? ""
             animatesWhenAdded = true
             glyphText = annotation.icon ?? ""
             clusteringIdentifier = nil

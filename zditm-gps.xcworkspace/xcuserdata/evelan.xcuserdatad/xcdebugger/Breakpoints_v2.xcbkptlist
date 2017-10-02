@@ -25,22 +25,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zditm-gps/ViewModel/MapViewModel.swift"
-            timestampString = "528246215.855047"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "vehicleMarkers"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "zditm-gps/Model/VehicleStop.swift"
             timestampString = "527892225.42599"
             startingColumnNumber = "9223372036854775807"
@@ -202,13 +186,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/Model/VehiclePosition.swift"
-            timestampString = "528244328.568811"
+            timestampString = "528568732.625464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "init(from:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -218,13 +202,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/Model/VehiclePosition.swift"
-            timestampString = "528244328.568863"
+            timestampString = "528568732.625518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
             endingLineNumber = "57"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "init(from:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -235,44 +219,12 @@
             condition = "delayString == nil"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/Model/VehiclePosition.swift"
-            timestampString = "528244328.568907"
+            timestampString = "528568732.62556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "zditm-gps/ViewModel/MapViewModel.swift"
-            timestampString = "528246215.855278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "updateVehiclePositions()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "zditm-gps/ViewModel/MapViewModel.swift"
-            timestampString = "528246215.855336"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "updateVehiclePositions()"
+            landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,12 +265,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/ViewModel/MapViewModel.swift"
-            timestampString = "528246215.855422"
+            timestampString = "528667720.202396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "updateVehiclePositions()"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "higlightRoute(vehicle:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -329,55 +281,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/ViewModel/MapViewModel.swift"
-            timestampString = "528246215.855489"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "updateVehiclePositions()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;zditm_gps.VehiclePostion&gt;) -&gt; () in zditm_gps.MapViewModel.updateVehiclePositions() -&gt; ()"
-                  moduleName = "zditm-gps"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/ViewModel/MapViewModel.swift"
-                  timestampString = "528071297.534549"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "344">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (zditm_gps.VehiclePostion) -&gt; Swift.Bool in closure #1 (Swift.Array&lt;zditm_gps.VehiclePostion&gt;) -&gt; () in zditm_gps.MapViewModel.updateVehiclePositions() -&gt; ()"
-                  moduleName = "zditm-gps"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/ViewModel/MapViewModel.swift"
-                  timestampString = "528071297.536278"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "zditm-gps/ViewModel/MapViewModel.swift"
-            timestampString = "528246215.855534"
+            timestampString = "528667720.202753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -392,24 +296,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zditm-gps/ViewModel/MapViewModel.swift"
-            timestampString = "528246215.855581"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "higlightRoute(vehicle:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.21707"
+            timestampString = "528501701.947298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -440,92 +328,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zditm-gps/Service/ZditmService.swift"
-            timestampString = "528246215.85569"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "fetchRoute(gmvid:completition:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "zditm_gps.ZditmService.fetchRoute(lineNumber: Swift.Int, completition: (Swift.Array&lt;__C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "zditm-gps"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/Service/ZditmService.swift"
-                  timestampString = "528154556.732735"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "448">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in zditm_gps.ZditmService.fetchRoute(lineNumber: Swift.Int, completition: (Swift.Array&lt;__C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "zditm-gps"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/Service/ZditmService.swift"
-                  timestampString = "528154556.734136"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "zditm-gps/Service/ZditmService.swift"
-            timestampString = "528246215.855747"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "fetchRoute(gmvid:completition:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "zditm-gps/Service/ZditmService.swift"
-            timestampString = "528246215.855791"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "fetchRoute(gmvid:completition:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "zditm-gps/ViewModel/MapViewModel.swift"
-            timestampString = "528246215.855836"
+            timestampString = "528667720.203021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "higlightRoute(vehicle:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -537,7 +345,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.217581"
+            timestampString = "528501701.947868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -553,7 +361,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.217921"
+            timestampString = "528501701.947975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -601,11 +409,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/ViewModel/ResultRowModelView.swift"
-            timestampString = "528333046.280768"
+            timestampString = "528667720.203285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "delay"
             landmarkType = "24">
          </BreakpointContent>
@@ -617,27 +425,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
-            timestampString = "528469879.218266"
+            timestampString = "528667720.203337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "updateQuery(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
-            timestampString = "528469879.218314"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "rows"
             landmarkType = "24">
          </BreakpointContent>
@@ -649,11 +441,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
-            timestampString = "528469879.218354"
+            timestampString = "528667720.203388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "getCellViewModel(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -664,56 +456,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
-            timestampString = "528469879.218393"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "init(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "zditm_gps.SearchViewModel.init(zditm_gps.ResultSearchDelegate) -&gt; zditm_gps.SearchViewModel"
-                  moduleName = "zditm-gps"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/ViewModel/SearchViewModel.swift"
-                  timestampString = "528467903.410962"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "484">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;zditm_gps.VehiclePostion&gt;) -&gt; () in zditm_gps.SearchViewModel.init(zditm_gps.ResultSearchDelegate) -&gt; zditm_gps.SearchViewModel"
-                  moduleName = "zditm-gps"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/ViewModel/SearchViewModel.swift"
-                  timestampString = "528467903.412232"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.218432"
+            timestampString = "528501701.948922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -729,7 +473,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.218754"
+            timestampString = "528501701.949007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -745,7 +489,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.219082"
+            timestampString = "528501701.949093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -761,7 +505,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.219411"
+            timestampString = "528501701.949178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -777,7 +521,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.219778"
+            timestampString = "528501701.949265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -793,7 +537,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.2201"
+            timestampString = "528501701.949349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -809,7 +553,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.220413"
+            timestampString = "528501701.94943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -825,7 +569,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultSearchController.swift"
-            timestampString = "528469879.220734"
+            timestampString = "528501701.949515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -841,7 +585,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultTableViewCell.swift"
-            timestampString = "528333046.281742"
+            timestampString = "528586147.720561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -857,11 +601,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/ResultTableViewCell.swift"
-            timestampString = "528333046.28224"
+            timestampString = "528586147.720606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "setSelected(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -873,11 +617,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
-            timestampString = "528469879.221101"
+            timestampString = "528667720.203553"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "rows"
             landmarkType = "24">
          </BreakpointContent>
@@ -889,12 +633,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/MapViewController.swift"
-            timestampString = "528469879.221148"
+            timestampString = "528667720.203606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "setupSearchBar()"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "mapView(_:rendererFor:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -905,12 +649,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/MapViewController.swift"
-            timestampString = "528469879.221194"
+            timestampString = "528667720.203648"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "setupSearchBar()"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "mapView(_:rendererFor:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -921,12 +665,314 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zditm-gps/View/MapViewController.swift"
-            timestampString = "528469879.221234"
+            timestampString = "528667720.203687"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/Model/VehiclePosition.swift"
+            timestampString = "528568732.627982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/Model/VehiclePosition.swift"
+            timestampString = "528568732.628031"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/Model/VehiclePosition.swift"
+            timestampString = "528568732.628076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/Model/VehiclePosition.swift"
+            timestampString = "528568732.628117"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
+            timestampString = "528667720.203778"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "updateQuery(query:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
+            timestampString = "528667720.203826"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "updateQuery(query:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "zditm_gps.SearchViewModel.updateQuery(Swift.String) -&gt; ()"
+                  moduleName = "zditm-gps"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/ViewModel/SearchViewModel.swift"
+                  timestampString = "528586015.237775"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "1936">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #7 (zditm_gps.ResultRowModelView) -&gt; () in zditm_gps.SearchViewModel.updateQuery(Swift.String) -&gt; ()"
+                  moduleName = "zditm-gps"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/ViewModel/SearchViewModel.swift"
+                  timestampString = "528586015.239594"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
+            timestampString = "528667720.20387"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "updateQuery(query:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
+            timestampString = "528667720.203917"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "updateQuery(query:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/View/ResultTableViewController.swift"
+            timestampString = "528667720.203965"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/View/ResultTableViewController.swift"
+            timestampString = "528667720.204013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "updateSearchResults(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/View/ResultTableViewController.swift"
+            timestampString = "528667720.204059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
+            timestampString = "528667720.204106"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "updateQuery(query:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "zditm_gps.SearchViewModel.updateQuery(Swift.String) -&gt; ()"
+                  moduleName = "zditm-gps"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/ViewModel/SearchViewModel.swift"
+                  timestampString = "528663952.093152"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1680">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #7 (zditm_gps.VehiclePostion) -&gt; Swift.Bool in zditm_gps.SearchViewModel.updateQuery(Swift.String) -&gt; ()"
+                  moduleName = "zditm-gps"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evelan/Workspace/zditm-gps/zditm-gps/ViewModel/SearchViewModel.swift"
+                  timestampString = "528663952.095414"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/View/ResultTableViewController.swift"
+            timestampString = "528667720.204151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
-            landmarkName = "setupSearchBar()"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/ViewModel/SearchViewModel.swift"
+            timestampString = "528667720.204197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "updateQuery(query:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zditm-gps/ViewModel/MapViewModel.swift"
+            timestampString = "528667720.204236"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "userResetSelectionRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

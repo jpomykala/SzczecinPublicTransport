@@ -8,14 +8,10 @@
 
 import UIKit
 
-class ResultTableViewCell: UITableViewCell {
+class OverviewTableViewCell: UITableViewCell {
 
-    @IBOutlet var minutesLabel: UILabel!
-    @IBOutlet var delayTextLabel: UILabel!
-    @IBOutlet var toLabel: UILabel!
-    @IBOutlet var fromLabel: UILabel!
-    @IBOutlet var delayLabel: UILabel!
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var vehicleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

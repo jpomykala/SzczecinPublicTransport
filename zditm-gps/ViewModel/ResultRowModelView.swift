@@ -11,13 +11,19 @@ import Foundation
 class ResultRowModelView {
     
     private let vehicle: VehiclePostion!
+    let isSummary: Bool!
     
-    init(_ vehicle: VehiclePostion) {
+    init(_ vehicle: VehiclePostion, isSummary: Bool) {
         self.vehicle = vehicle
+        self.isSummary = isSummary
     }
     
     var icon: String {
        return vehicle.icon ?? ""
+    }
+    
+    var id : Int {
+        return vehicle.id!
     }
     
     var line: String {
@@ -54,7 +60,7 @@ class ResultRowModelView {
         if delay > 0 {
             return "szybciej"
         }
-        return "zgodnie z rozkładem"
+        return "o czasie"
     }
     
     var minutes: String {
