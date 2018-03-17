@@ -153,8 +153,8 @@
 		29B7007E1F75A25D0072D88C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */,
 				29A0087C1F76791F0056102B /* VehicleStop.swift */,
+				2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */,
 				2925E51D1F7AFE0D009BFD9C /* RouteGeoJson.swift */,
 				291DBE781F7C53CC002E7DDA /* Alert.swift */,
 				29EFD70C1F8156E8004C2FC1 /* StopDepartureInfo.swift */,
