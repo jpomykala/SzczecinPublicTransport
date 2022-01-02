@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-struct VehiclePostion: Decodable {
+struct VehiclePostion: Decodable, Identifiable {
     
     var id: Int?
     var gmvid: Int?

@@ -12,7 +12,6 @@ import Alamofire
 
 class MapViewModel {
     
-    private var delegate: MapScreenDelegate
     private var zditmService: ZditmService
     private var locationManager: CLLocationManager
     private var highlightedLine: String?
@@ -22,8 +21,8 @@ class MapViewModel {
     private var routePoints: [CLLocationCoordinate2D]
     private var stops: [VehicleStop]
     
-    init(_ delegate: MapScreenDelegate) {
-        self.delegate = delegate
+    init() {
+        
         self.zditmService = ZditmService()
         self.locationManager = CLLocationManager()
         self.vehicles = []
@@ -68,9 +67,9 @@ class MapViewModel {
                     self.higlightRoute(vehicle: self.vehicles[0])
                 }
             }
-            self.delegate.updateView()
+            
         }) { (error) in
-            self.delegate.showAlert(error: error)
+            
         }
     }
     
@@ -81,12 +80,12 @@ class MapViewModel {
         
         self.zditmService.fetchRoute(gmvid: gmvid) { (points) in
             self.routePoints = points
-            self.delegate.updateView()
+            
         }
         
         self.zditmService.fetchStops(lineNumber: line) { (stops) in
             self.stops = stops
-            self.delegate.updateView()
+            
         }
     }
     

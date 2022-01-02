@@ -3,17 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0C8D693B6F7CAFDD0B4AA3CF /* Pods_zditm_gps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92BE20758D96EA57A9852C1 /* Pods_zditm_gps.framework */; };
+		1B41DC982782110C00F6B3A7 /* SlideOverCard in Frameworks */ = {isa = PBXBuildFile; productRef = 1B41DC972782110C00F6B3A7 /* SlideOverCard */; };
+		1B41DC9A278211B500F6B3A7 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B41DC99278211B500F6B3A7 /* SearchBar.swift */; };
+		1B41DC9C278216D300F6B3A7 /* LineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B41DC9B278216D300F6B3A7 /* LineRow.swift */; };
+		1B41DC9E2782232200F6B3A7 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B41DC9D2782232200F6B3A7 /* Vehicles.swift */; };
+		1B41DCA0278233FF00F6B3A7 /* WhereIsMyBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B41DC9F278233FF00F6B3A7 /* WhereIsMyBus.swift */; };
 		2900FEE91F75BD3F002C1186 /* ZditmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEE81F75BD3F002C1186 /* ZditmService.swift */; };
 		2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */; };
 		291DBE791F7C53CC002E7DDA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DBE781F7C53CC002E7DDA /* Alert.swift */; };
 		2925E51E1F7AFE0D009BFD9C /* RouteGeoJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2925E51D1F7AFE0D009BFD9C /* RouteGeoJson.swift */; };
-		293225081F7734530040C747 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293225071F7734530040C747 /* ResultTableViewController.swift */; };
-		295C188F1F8167C5003837B6 /* OverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295C188E1F8167C5003837B6 /* OverviewTableViewCell.swift */; };
+		293225081F7734530040C747 /* MyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293225071F7734530040C747 /* MyMainView.swift */; };
 		2968B4C31F79A06D00C8B2CF /* ResultRowModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */; };
 		29694F881F75A63300035D5D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29694F871F75A63300035D5D /* MapKit.framework */; };
 		29694F8A1F75AC1100035D5D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29694F891F75AC1100035D5D /* MapViewModel.swift */; };
@@ -22,23 +26,21 @@
 		29A008881F76A2D50056102B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008871F76A2D50056102B /* UIColor+Extension.swift */; };
 		29A0088A1F76AA240056102B /* MarkerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A008891F76AA240056102B /* MarkerViewModel.swift */; };
 		29A0088E1F76E5C00056102B /* VehicleMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0088D1F76E5C00056102B /* VehicleMarkerView.swift */; };
-		29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7006A1F75A1670072D88C /* AppDelegate.swift */; };
-		29B7006D1F75A1670072D88C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7006C1F75A1670072D88C /* MapViewController.swift */; };
-		29B700701F75A1670072D88C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B7006E1F75A1670072D88C /* Main.storyboard */; };
 		29B700721F75A1670072D88C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29B700711F75A1670072D88C /* Assets.xcassets */; };
-		29B700751F75A1670072D88C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B700731F75A1670072D88C /* LaunchScreen.storyboard */; };
 		29EFD70D1F8156E8004C2FC1 /* StopDepartureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EFD70C1F8156E8004C2FC1 /* StopDepartureInfo.swift */; };
 		29F9C0E41F77E377008D6CB2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F9C0E31F77E377008D6CB2 /* SearchViewModel.swift */; };
-		29F9C0E81F77EADF008D6CB2 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F9C0E71F77EADF008D6CB2 /* ResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B41DC99278211B500F6B3A7 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		1B41DC9B278216D300F6B3A7 /* LineRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineRow.swift; sourceTree = "<group>"; };
+		1B41DC9D2782232200F6B3A7 /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		1B41DC9F278233FF00F6B3A7 /* WhereIsMyBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereIsMyBus.swift; sourceTree = "<group>"; };
 		2900FEE81F75BD3F002C1186 /* ZditmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZditmService.swift; sourceTree = "<group>"; };
 		2900FEEA1F75BEDA002C1186 /* VehiclePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePosition.swift; sourceTree = "<group>"; };
 		291DBE781F7C53CC002E7DDA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2925E51D1F7AFE0D009BFD9C /* RouteGeoJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteGeoJson.swift; sourceTree = "<group>"; };
-		293225071F7734530040C747 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
-		295C188E1F8167C5003837B6 /* OverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewCell.swift; sourceTree = "<group>"; };
+		293225071F7734530040C747 /* MyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMainView.swift; sourceTree = "<group>"; };
 		2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRowModelView.swift; sourceTree = "<group>"; };
 		29694F871F75A63300035D5D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		29694F891F75AC1100035D5D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -48,15 +50,10 @@
 		29A008891F76AA240056102B /* MarkerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewModel.swift; sourceTree = "<group>"; };
 		29A0088D1F76E5C00056102B /* VehicleMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleMarkerView.swift; sourceTree = "<group>"; };
 		29B700671F75A1670072D88C /* zditm-gps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zditm-gps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		29B7006A1F75A1670072D88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29B7006C1F75A1670072D88C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		29B7006F1F75A1670072D88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29B700711F75A1670072D88C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		29B700741F75A1670072D88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29B700761F75A1670072D88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29EFD70C1F8156E8004C2FC1 /* StopDepartureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDepartureInfo.swift; sourceTree = "<group>"; };
 		29F9C0E31F77E377008D6CB2 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		29F9C0E71F77EADF008D6CB2 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		D92BE20758D96EA57A9852C1 /* Pods_zditm_gps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zditm_gps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E029B96207561DB7EAF3E37D /* Pods-zditm-gps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zditm-gps.release.xcconfig"; path = "Pods/Target Support Files/Pods-zditm-gps/Pods-zditm-gps.release.xcconfig"; sourceTree = "<group>"; };
 		F659FF643130B32027B9A4F1 /* Pods-zditm-gps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zditm-gps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zditm-gps/Pods-zditm-gps.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29694F881F75A63300035D5D /* MapKit.framework in Frameworks */,
+				1B41DC982782110C00F6B3A7 /* SlideOverCard in Frameworks */,
 				0C8D693B6F7CAFDD0B4AA3CF /* Pods_zditm_gps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,15 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2968B4BF1F7995D200C8B2CF /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				29B7006E1F75A1670072D88C /* Main.storyboard */,
-				29B700731F75A1670072D88C /* LaunchScreen.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		29A008861F76A2C30056102B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,10 +108,9 @@
 				29B7007E1F75A25D0072D88C /* Model */,
 				29B7007C1F75A2540072D88C /* ViewModel */,
 				29B7007D1F75A2590072D88C /* View */,
-				2968B4BF1F7995D200C8B2CF /* Storyboard */,
-				29B7006A1F75A1670072D88C /* AppDelegate.swift */,
 				29B700711F75A1670072D88C /* Assets.xcassets */,
 				29B700761F75A1670072D88C /* Info.plist */,
+				1B41DC9F278233FF00F6B3A7 /* WhereIsMyBus.swift */,
 			);
 			path = "zditm-gps";
 			sourceTree = "<group>";
@@ -134,6 +122,7 @@
 				29F9C0E31F77E377008D6CB2 /* SearchViewModel.swift */,
 				2968B4C21F79A06D00C8B2CF /* ResultRowModelView.swift */,
 				29A008891F76AA240056102B /* MarkerViewModel.swift */,
+				1B41DC9D2782232200F6B3A7 /* Vehicles.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -141,11 +130,10 @@
 		29B7007D1F75A2590072D88C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				29B7006C1F75A1670072D88C /* MapViewController.swift */,
-				293225071F7734530040C747 /* ResultTableViewController.swift */,
-				29F9C0E71F77EADF008D6CB2 /* ResultTableViewCell.swift */,
-				295C188E1F8167C5003837B6 /* OverviewTableViewCell.swift */,
+				293225071F7734530040C747 /* MyMainView.swift */,
 				29A0088D1F76E5C00056102B /* VehicleMarkerView.swift */,
+				1B41DC99278211B500F6B3A7 /* SearchBar.swift */,
+				1B41DC9B278216D300F6B3A7 /* LineRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +195,9 @@
 			dependencies = (
 			);
 			name = "zditm-gps";
+			packageProductDependencies = (
+				1B41DC972782110C00F6B3A7 /* SlideOverCard */,
+			);
 			productName = "zditm-gps";
 			productReference = 29B700671F75A1670072D88C /* zditm-gps.app */;
 			productType = "com.apple.product-type.application";
@@ -233,7 +224,7 @@
 				};
 			};
 			buildConfigurationList = 29B700621F75A1670072D88C /* Build configuration list for PBXProject "zditm-gps" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -241,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 29B7005E1F75A1670072D88C;
+			packageReferences = (
+				1B41DC962782110C00F6B3A7 /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */,
+			);
 			productRefGroup = 29B700681F75A1670072D88C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,9 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29B700751F75A1670072D88C /* LaunchScreen.storyboard in Resources */,
 				29B700721F75A1670072D88C /* Assets.xcassets in Resources */,
-				29B700701F75A1670072D88C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,19 +316,19 @@
 			files = (
 				29A0088A1F76AA240056102B /* MarkerViewModel.swift in Sources */,
 				29A0087D1F76791F0056102B /* VehicleStop.swift in Sources */,
-				295C188F1F8167C5003837B6 /* OverviewTableViewCell.swift in Sources */,
-				29B7006D1F75A1670072D88C /* MapViewController.swift in Sources */,
-				293225081F7734530040C747 /* ResultTableViewController.swift in Sources */,
-				29B7006B1F75A1670072D88C /* AppDelegate.swift in Sources */,
+				293225081F7734530040C747 /* MyMainView.swift in Sources */,
+				1B41DC9E2782232200F6B3A7 /* Vehicles.swift in Sources */,
 				2925E51E1F7AFE0D009BFD9C /* RouteGeoJson.swift in Sources */,
 				2968B4C31F79A06D00C8B2CF /* ResultRowModelView.swift in Sources */,
 				29EFD70D1F8156E8004C2FC1 /* StopDepartureInfo.swift in Sources */,
-				29F9C0E81F77EADF008D6CB2 /* ResultTableViewCell.swift in Sources */,
 				29F9C0E41F77E377008D6CB2 /* SearchViewModel.swift in Sources */,
 				29A0088E1F76E5C00056102B /* VehicleMarkerView.swift in Sources */,
 				29A008881F76A2D50056102B /* UIColor+Extension.swift in Sources */,
 				2900FEEB1F75BEDA002C1186 /* VehiclePosition.swift in Sources */,
 				29A008851F76A1BC0056102B /* Constants.swift in Sources */,
+				1B41DCA0278233FF00F6B3A7 /* WhereIsMyBus.swift in Sources */,
+				1B41DC9A278211B500F6B3A7 /* SearchBar.swift in Sources */,
+				1B41DC9C278216D300F6B3A7 /* LineRow.swift in Sources */,
 				2900FEE91F75BD3F002C1186 /* ZditmService.swift in Sources */,
 				291DBE791F7C53CC002E7DDA /* Alert.swift in Sources */,
 				29694F8A1F75AC1100035D5D /* MapViewModel.swift in Sources */,
@@ -344,25 +336,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		29B7006E1F75A1670072D88C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29B7006F1F75A1670072D88C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		29B700731F75A1670072D88C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29B700741F75A1670072D88C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		29B700771F75A1670072D88C /* Debug */ = {
@@ -413,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -464,10 +437,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -478,13 +452,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = CE9SSKLLJ7;
 				INFOPLIST_FILE = "zditm-gps/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.jpomykala.zditm-gps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -494,13 +473,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = CE9SSKLLJ7;
 				INFOPLIST_FILE = "zditm-gps/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.jpomykala.zditm-gps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -526,6 +510,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1B41DC962782110C00F6B3A7 /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moifort/swiftUI-slide-over-card.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B41DC972782110C00F6B3A7 /* SlideOverCard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B41DC962782110C00F6B3A7 /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */;
+			productName = SlideOverCard;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29B7005F1F75A1670072D88C /* Project object */;
 }

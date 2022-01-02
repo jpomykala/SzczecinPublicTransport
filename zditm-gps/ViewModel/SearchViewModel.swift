@@ -11,13 +11,11 @@ import MapKit
 
 class SearchViewModel {
     
-    private var delegate: ResultSearchDelegate
     private var zditmService: ZditmService
     private var vehicles: [VehiclePostion]
     private var filteredVehicles: [ResultRowModelView]
     
-    init(_ delegate: ResultSearchDelegate) {
-        self.delegate = delegate
+    init() {
         self.zditmService = ZditmService()
         self.vehicles = []
         self.filteredVehicles = []
@@ -54,7 +52,6 @@ class SearchViewModel {
                 self.filteredVehicles.append(ResultRowModelView(tmpByLine[0], isSummary: true))
             }
         }
-        self.delegate.updateView()
     }
     
     private func filterVehiclesStartsWith(query: String, _ input: [VehiclePostion]) -> [VehiclePostion] {
